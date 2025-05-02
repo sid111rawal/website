@@ -5,11 +5,11 @@ import express, { type Request, Response, NextFunction } from "express";
 import { registerRoutes } from "./routes";
 import { setupVite, serveStatic, log } from "./vite";
 
-
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
+// Request logging middleware (unchanged from your original)
 app.use((req, res, next) => {
   const start = Date.now();
   const path = req.path;
@@ -28,45 +28,43 @@ app.use((req, res, next) => {
       if (capturedJsonResponse) {
         logLine += ` :: ${JSON.stringify(capturedJsonResponse)}`;
       }
-
-      if (logLine.length > 80) {
-        logLine = logLine.slice(0, 79) + "…";
-      }
-
-      log(logLine);
+      log(logLine.length > 80 ? logLine.slice(0, 79) + "…" : logLine);
     }
   });
-
   next();
 });
 
 (async () => {
   const server = await registerRoutes(app);
 
+  // Error handling (unchanged from your original)
   app.use((err: any, _req: Request, res: Response, _next: NextFunction) => {
     const status = err.status || err.statusCode || 500;
     const message = err.message || "Internal Server Error";
-
     res.status(status).json({ message });
     throw err;
   });
 
-  // importantly only setup vite in development and after
-  // setting up all the other routes so the catch-all route
-  // doesn't interfere with the other routes
+  // Vite setup (unchanged)
   if (app.get("env") === "development") {
     await setupVite(app, server);
   } else {
     serveStatic(app);
   }
 
-  // Use the port specified by the process arguments, or 5000 if not provided
-  const port = process.argv.includes('--port') ? parseInt(process.argv[process.argv.indexOf('--port') + 1]) : 5000;
-  server.listen({
-    port,
-      host: process.argv.includes('--host') ? process.argv[process.argv.indexOf('--host') + 1] : "0.0.0.0",
-    reusePort: true,
-  }, () => {
-    log(`serving on port ${port}`);
+  // PORT RESOLUTION FIX ==========================================
+  // 1. Check for direct argument (9003 in your case)
+  // 2. Fall back to .env PORT
+  // 3. Default to 5000
+  const portArgIndex = process.argv.findIndex(arg => arg === '--port');
+  const port = portArgIndex !== -1 
+    ? parseInt(process.argv[portArgIndex + 1])
+    : process.env.PORT 
+      ? parseInt(process.env.PORT)
+      : 5000;
+
+  server.listen(port, "0.0.0.0", () => {
+    log(`Server running on http://0.0.0.0:${port}`);
+    log(`Mode: ${app.get("env")}`);
   });
 })();
