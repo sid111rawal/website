@@ -143,20 +143,21 @@ export default function PerformanceOptimization() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.6 }}
           >
-            <h3 className="text-xl font-bold mb-4">Form Handling with Formspree</h3>
+            <h3 className="text-xl font-bold mb-4">Form Handling with FormSubmit</h3>
             <p className="mb-4 text-muted-foreground">
-              For the contact form, I've implemented Formspree, a reliable and secure form backend service 
-              that collects submissions and delivers them directly to your email without requiring any backend code.
+              For the contact form, I've implemented FormSubmit, a free and easy-to-use form backend service 
+              that forwards submissions directly to your email without any account creation required.
             </p>
             
             <div className="bg-muted/50 dark:bg-muted/10 p-4 rounded-lg">
-              <h4 className="font-medium mb-2">How to set up your Formspree account:</h4>
+              <h4 className="font-medium mb-2">How to set up FormSubmit:</h4>
               <ol className="space-y-2 text-muted-foreground list-decimal list-inside">
-                <li>Sign up for a free account at <a href="https://formspree.io" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">formspree.io</a></li>
-                <li>Create a new form and get your unique form ID</li>
-                <li>Replace "yourformid" in the contact form action URL with your actual form ID</li>
-                <li>Test the form to ensure submissions arrive in your email</li>
-                <li>Free tier includes 50 submissions per month (paid plans available for higher volumes)</li>
+                <li>Replace "your-email@example.com" in the contact form action URL with your actual email address</li>
+                <li>Update the "_next" hidden field URL to your actual website URL</li>
+                <li>Submit the form once - you'll receive a confirmation email to activate the form</li>
+                <li>Click the activation link in the confirmation email</li>
+                <li>Form is now ready to use with no limits on submissions</li>
+                <li>Has built-in spam protection with captcha support</li>
               </ol>
             </div>
           </motion.div>

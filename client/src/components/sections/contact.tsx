@@ -93,37 +93,39 @@ export default function Contact() {
     setIsSubmitting(true);
     
     try {
-      // Try to use our backend API first (if it exists)
+      // When using FormSubmit, we should let the form submit naturally
+      // but we can try our API first if it exists
       try {
+        // First try our backend API if available
         await apiRequest("POST", "/api/contact", {
           name: formData.name,
           email: formData.email,
           subject: formData.subject || "Contact Form Submission",
           message: formData.message,
         });
+        
+        // If API succeeds, show success and reset the form
+        toast({
+          title: "Message sent!",
+          description: "Thank you for your message. I'll get back to you soon.",
+          variant: "default",
+        });
+        
+        // Reset form
+        setFormData({
+          name: "",
+          email: "",
+          subject: "",
+          message: "",
+          agreePrivacy: false
+        });
       } catch (apiError) {
-        // If API fails, let the form submit normally to Formspree
+        // If API fails, submit normally to FormSubmit
+        // This will redirect the user to FormSubmit and then to the thank you page
         const form = document.getElementById('contact-form') as HTMLFormElement;
         form.submit();
-        // Return early as form will be submitted to Formspree
-        return;
+        return; // Return early as user will be redirected
       }
-      
-      toast({
-        title: "Message sent!",
-        description: "Thank you for your message. I'll get back to you soon.",
-        variant: "default",
-      });
-      
-      // Reset form
-      setFormData({
-        name: "",
-        email: "",
-        subject: "",
-        message: "",
-        agreePrivacy: false
-      });
-      
     } catch (error) {
       toast({
         title: "Failed to send message",
@@ -234,10 +236,15 @@ export default function Contact() {
               <form 
                 id="contact-form" 
                 className="bg-card rounded-xl p-8 shadow-sm border border-border"
-                action="https://formspree.io/f/yourformid" 
+                action="https://formsubmit.co/your-email@example.com" 
                 method="POST"
                 onSubmit={handleSubmit}
               >
+                {/* FormSubmit configuration */}
+                <input type="hidden" name="_subject" value="New portfolio website inquiry" />
+                <input type="hidden" name="_template" value="table" />
+                <input type="hidden" name="_captcha" value="true" />
+                <input type="hidden" name="_next" value="https://your-website.com/?thankyou=true" />
                 <div className="mb-6">
                   <label htmlFor="name" className="block text-sm font-medium mb-2">Your Name</label>
                   <Input
