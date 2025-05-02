@@ -227,6 +227,8 @@ export default function BlogIndex() {
                   <img 
                     src={featuredPost.image} 
                     alt={featuredPost.title} 
+                    loading="lazy"
+                    decoding="async"
                     className="w-full h-full object-cover min-h-[300px]"
                   />
                 </div>
@@ -308,6 +310,8 @@ export default function BlogIndex() {
                       <img 
                         src={post.image} 
                         alt={post.title} 
+                        loading="lazy"
+                        decoding="async"
                         className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                       />
                       <Badge className="absolute top-3 left-3">{post.category}</Badge>

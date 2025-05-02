@@ -109,7 +109,7 @@ export default function Testimonials() {
                   <div className="bg-card p-8 rounded-xl shadow-sm border border-border h-full">
                     <div className="flex items-center gap-4 mb-6">
                       <div className="w-14 h-14 rounded-full overflow-hidden">
-                        <img src={testimonial.image} alt={testimonial.name} className="w-full h-full object-cover" />
+                        <img src={testimonial.image} alt={testimonial.name} loading="lazy" decoding="async" className="w-full h-full object-cover" />
                       </div>
                       <div>
                         <h4 className="font-bold">{testimonial.name}</h4>
