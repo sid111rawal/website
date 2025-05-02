@@ -38,18 +38,12 @@ export default function Header() {
   const navItems = [
     { label: "Home", href: "/" },
     { label: "Services", href: "/services" },
+    { label: "Work", href: "/case-studies/ecommerce-project" },
     { label: "Blog", href: "/blog" },
-    { label: "Resources", href: "/resources" },
-    { label: "Case Studies", href: "/case-studies/ecommerce-project" },
+    { label: "Contact", href: "/#contact" },
   ];
 
-  // On the home page we still have anchor links to sections
-  const homePageSections = location === "/" ? [
-    { label: "Services", href: "#services" },
-    { label: "Work", href: "#work" },
-    { label: "About", href: "#about" },
-    { label: "Contact", href: "#contact" },
-  ] : [];
+  // Removed home page section anchors to simplify navigation
 
   const isActive = (href: string) => {
     // For routes
@@ -92,16 +86,7 @@ export default function Header() {
             </a>
           ))}
           
-          {/* Show section anchors when on homepage */}
-          {location === "/" && homePageSections.map((item) => (
-            <a
-              key={item.href}
-              href={item.href}
-              className="text-sm font-medium transition-colors hover:text-primary"
-            >
-              {item.label}
-            </a>
-          ))}
+          {/* Resources dropdown could go here in the future */}
         </nav>
         
         <div className="flex items-center gap-4">
@@ -122,7 +107,7 @@ export default function Header() {
           
           {/* Contact button (desktop only) */}
           <a 
-            href="#contact" 
+            href="/#contact" 
             className="hidden md:flex items-center justify-center px-4 py-2 rounded-md bg-primary hover:bg-primary/90 text-white text-sm font-medium transition-colors"
           >
             Let's Talk
@@ -160,20 +145,16 @@ export default function Header() {
             </a>
           ))}
           
-          {/* Show section anchors when on homepage */}
-          {location === "/" && homePageSections.map((item) => (
+          {/* More dropdown for mobile */}
+          <div className="pt-2 border-t border-border mt-2">
+            <p className="px-3 py-1 text-xs font-semibold text-muted-foreground uppercase">More pages</p>
             <a
-              key={item.href}
-              href={item.href}
+              href="/resources"
               className="block py-2 px-3 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 font-medium"
               onClick={closeMenu}
             >
-              {item.label}
+              Resources
             </a>
-          ))}
-          
-          {/* Extra links for mobile */}
-          <div className="pt-2 border-t border-border mt-2">
             <a
               href="/branding"
               className="block py-2 px-3 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 font-medium"
