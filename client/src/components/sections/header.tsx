@@ -36,15 +36,29 @@ export default function Header() {
   };
 
   const navItems = [
-    { label: "Home", href: "#home" },
+    { label: "Home", href: "/" },
+    { label: "Services", href: "/services" },
+    { label: "Blog", href: "/blog" },
+    { label: "Resources", href: "/resources" },
+    { label: "Case Studies", href: "/case-studies/ecommerce-project" },
+  ];
+
+  // On the home page we still have anchor links to sections
+  const homePageSections = location === "/" ? [
     { label: "Services", href: "#services" },
     { label: "Work", href: "#work" },
     { label: "About", href: "#about" },
     { label: "Contact", href: "#contact" },
-  ];
+  ] : [];
 
   const isActive = (href: string) => {
-    if (location === "/" && href === "#home") return true;
+    // For routes
+    if (href.startsWith('/') && location === href) return true;
+    // For case studies
+    if (href.startsWith('/case-studies') && location.startsWith('/case-studies')) return true;
+    // For home
+    if (location === "/" && href === "/") return true;
+    
     return false;
   };
 
@@ -73,6 +87,17 @@ export default function Header() {
                 "text-sm font-medium transition-colors",
                 isActive(item.href) ? "text-primary" : "hover:text-primary"
               )}
+            >
+              {item.label}
+            </a>
+          ))}
+          
+          {/* Show section anchors when on homepage */}
+          {location === "/" && homePageSections.map((item) => (
+            <a
+              key={item.href}
+              href={item.href}
+              className="text-sm font-medium transition-colors hover:text-primary"
             >
               {item.label}
             </a>
@@ -134,6 +159,36 @@ export default function Header() {
               {item.label}
             </a>
           ))}
+          
+          {/* Show section anchors when on homepage */}
+          {location === "/" && homePageSections.map((item) => (
+            <a
+              key={item.href}
+              href={item.href}
+              className="block py-2 px-3 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 font-medium"
+              onClick={closeMenu}
+            >
+              {item.label}
+            </a>
+          ))}
+          
+          {/* Extra links for mobile */}
+          <div className="pt-2 border-t border-border mt-2">
+            <a
+              href="/branding"
+              className="block py-2 px-3 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 font-medium"
+              onClick={closeMenu}
+            >
+              Branding
+            </a>
+            <a
+              href="/content-calendar"
+              className="block py-2 px-3 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 font-medium"
+              onClick={closeMenu}
+            >
+              Content Calendar
+            </a>
+          </div>
         </div>
       </div>
     </header>

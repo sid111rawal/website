@@ -9,6 +9,7 @@ import ServicesPage from "@/pages/services";
 import BlogIndex from "@/pages/blog";
 import BrandingPage from "@/pages/branding";
 import ContentCalendarPage from "@/pages/content-calendar";
+import ResourcesPage from "@/pages/resources";
 import EcommerceProjectCaseStudy from "@/pages/case-studies/ecommerce-project";
 
 function Router() {
@@ -19,6 +20,7 @@ function Router() {
       <Route path="/blog" component={BlogIndex} />
       <Route path="/branding" component={BrandingPage} />
       <Route path="/content-calendar" component={ContentCalendarPage} />
+      <Route path="/resources" component={ResourcesPage} />
       <Route path="/case-studies/ecommerce-project" component={EcommerceProjectCaseStudy} />
       <Route component={NotFound} />
     </Switch>
