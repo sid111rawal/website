@@ -14,7 +14,7 @@ export default function Home() {
   return (
     <>
       <Helmet>
-        <title>John Doe | Web Developer & Designer</title>
+        <title>Sid Rawal | Web Developer & Designer</title>
         <meta name="description" content="Professional web developer specializing in creating beautiful, functional websites and web applications." />
         <meta name="keywords" content="web developer, web designer, frontend, backend, react, responsive design" />
       </Helmet>

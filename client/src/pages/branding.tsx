@@ -8,7 +8,7 @@ export default function BrandingPage() {
   return (
     <>
       <Helmet>
-        <title>Branding & Taglines | John Doe</title>
+        <title>Branding & Taglines | Sid Rawal</title>
         <meta 
           name="description" 
           content="Explore branding taglines for web development services. Find the perfect slogan that communicates your unique value proposition."

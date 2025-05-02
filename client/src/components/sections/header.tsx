@@ -65,10 +65,10 @@ export default function Header() {
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between h-16 md:h-20">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 font-bold text-xl">
-          <span className="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white">
-            JD
+          <span className="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white">            
+          SR
           </span>
-          <span className="hidden sm:inline-block">John Doe</span>
+          <span className="hidden sm:inline-block">Sid Rawal</span>
         </Link>
         
         {/* Desktop Navigation */}

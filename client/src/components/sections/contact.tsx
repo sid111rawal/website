@@ -211,7 +211,14 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="font-medium mb-1">Phone</h3>
-                    <a href={`tel:${PERSONAL_INFO.phone.replace(/\s+/g, '')}`} className="text-primary hover:underline">{PERSONAL_INFO.phone}</a>
+                    <div className="flex flex-col gap-1">
+                      {PERSONAL_INFO.phone.map((phone, index) => (
+                        <a key={index} 
+                          href={`tel:${phone.replace(/\s+/g, '')}`} 
+                          className="text-primary hover:underline">{phone}</a>
+                      ))}
+                    </div>
+                    
                   </div>
                 </div>
                 

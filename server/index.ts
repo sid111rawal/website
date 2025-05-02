@@ -1,6 +1,10 @@
+import * as dotenv from "dotenv";
+dotenv.config();
+
 import express, { type Request, Response, NextFunction } from "express";
 import { registerRoutes } from "./routes";
 import { setupVite, serveStatic, log } from "./vite";
+
 
 const app = express();
 app.use(express.json());
@@ -56,13 +60,11 @@ app.use((req, res, next) => {
     serveStatic(app);
   }
 
-  // ALWAYS serve the app on port 5000
-  // this serves both the API and the client.
-  // It is the only port that is not firewalled.
-  const port = 5000;
+  // Use the port specified by the process arguments, or 5000 if not provided
+  const port = process.argv.includes('--port') ? parseInt(process.argv[process.argv.indexOf('--port') + 1]) : 5000;
   server.listen({
     port,
-    host: "0.0.0.0",
+      host: process.argv.includes('--host') ? process.argv[process.argv.indexOf('--host') + 1] : "0.0.0.0",
     reusePort: true,
   }, () => {
     log(`serving on port ${port}`);

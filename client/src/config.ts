@@ -7,25 +7,24 @@
 
 // Personal Information
 export const PERSONAL_INFO = {
-  name: "John Doe",
+  name: "Sid Rawal",
   title: "Web Developer & Designer",
-  email: "your-email@example.com", // Replace with your actual email for FormSubmit
-  phone: "+1 (123) 456-7890",
-  location: "San Francisco, CA",
+  email: "sidrawal1200@gmail.com", // Replace with your actual email for FormSubmit
+  phone: ["+91 92594-18994", "+1 (416) 857-8831"],
+  location: "Toronto, Canada",
 }
 
 // Social Media Links
 export const SOCIAL_LINKS = {
   github: "https://github.com",
-  linkedin: "https://linkedin.com",
+  linkedin: "https://linkedin.com/in/siddharthrawal",
   twitter: "https://twitter.com",
-  instagram: "https://instagram.com",
 }
 
 // Form Configuration
 export const FORM_CONFIG = {
-  formSubmitEmail: "your-email@example.com", // Replace with your actual email for the FormSubmit endpoint
-  redirectUrl: "https://your-website.com/?thankyou=true", // URL to redirect after form submission
+  formSubmitEmail: "sidrawal1200@gmail.com", // Replace with your actual email for the FormSubmit endpoint
+  redirectUrl: "/", // URL to redirect after form submission
   subject: "New portfolio website inquiry",
   useTableTemplate: true, // Whether to use the table template in FormSubmit
   enableCaptcha: true, // Whether to enable captcha protection in FormSubmit
@@ -33,7 +32,7 @@ export const FORM_CONFIG = {
 
 // Website Meta Information
 export const SITE_META = {
-  title: "John Doe | Web Developer & Designer",
+  title: "Sid Rawal | Web Developer & Designer",
   description: "Professional web developer specializing in creating high-performance, beautiful websites that drive business growth.",
   keywords: "web development, web design, react, typescript, frontend developer, full-stack developer",
   ogImage: "/og-image.jpg", // Open Graph image for social media sharing

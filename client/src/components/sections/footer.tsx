@@ -1,6 +1,7 @@
 import { Link } from "wouter";
 import { getInitials } from "@/lib/utils";
-
+import { PERSONAL_INFO } from "@/config";
+  
 export default function Footer() {
   const currentYear = new Date().getFullYear();
   
@@ -55,9 +56,9 @@ export default function Footer() {
           <div className="mb-6 md:mb-0">
             <Link href="/" className="flex items-center gap-2 font-bold text-xl">
               <span className="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white">
-                {getInitials("John Doe")}
+                {getInitials(PERSONAL_INFO.name)}
               </span>
-              <span>John Doe</span>
+              <span>{PERSONAL_INFO.name}</span>
             </Link>
             <p className="text-sm text-muted-foreground mt-2">Building exceptional web experiences</p>
           </div>
@@ -105,7 +106,7 @@ export default function Footer() {
         </div>
         
         <div className="border-t border-border mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-sm text-muted-foreground mb-4 md:mb-0">&copy; {currentYear} John Doe. All rights reserved.</p>
+          <p className="text-sm text-muted-foreground mb-4 md:mb-0">&copy; {currentYear} {PERSONAL_INFO.name}. All rights reserved.</p>
           
           <div className="flex gap-4">
             {socialLinks.map((link, index) => (
