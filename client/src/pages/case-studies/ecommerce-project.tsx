@@ -134,6 +134,8 @@ export default function EcommerceProjectCaseStudy() {
                 <img 
                   src="https://images.unsplash.com/photo-1607082349566-187342175e2f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
                   alt="FashionHub E-commerce Platform" 
+                  loading="lazy"
+                  decoding="async"
                   className="relative rounded-2xl shadow-lg border border-border w-full"
                 />
               </motion.div>
@@ -530,6 +532,8 @@ export default function EcommerceProjectCaseStudy() {
                     <img 
                       src="https://images.unsplash.com/photo-1593508512255-86ab42a8e620?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
                       alt="Advanced product filtering interface" 
+                      loading="lazy"
+                      decoding="async"
                       className="w-full h-full object-cover"
                     />
                   </div>
@@ -556,6 +560,8 @@ export default function EcommerceProjectCaseStudy() {
                     <img 
                       src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
                       alt="Streamlined checkout process" 
+                      loading="lazy"
+                      decoding="async"
                       className="w-full h-full object-cover"
                     />
                   </div>
@@ -582,6 +588,8 @@ export default function EcommerceProjectCaseStudy() {
                     <img 
                       src="https://images.unsplash.com/photo-1526406915894-7bcd65f60845?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
                       alt="Mobile-first responsive design" 
+                      loading="lazy"
+                      decoding="async"
                       className="w-full h-full object-cover"
                     />
                   </div>
@@ -608,6 +616,8 @@ export default function EcommerceProjectCaseStudy() {
                     <img 
                       src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
                       alt="Personalization engine" 
+                      loading="lazy"
+                      decoding="async"
                       className="w-full h-full object-cover"
                     />
                   </div>
