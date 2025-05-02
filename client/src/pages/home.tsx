@@ -2,6 +2,7 @@ import Header from "@/components/sections/header";
 import Hero from "@/components/sections/hero";
 import Services from "@/components/sections/services";
 import Portfolio from "@/components/sections/portfolio";
+import CTASection from "@/components/sections/cta-section";
 import About from "@/components/sections/about";
 import Testimonials from "@/components/sections/testimonials";
 import Contact from "@/components/sections/contact";
@@ -23,8 +24,10 @@ export default function Home() {
         <Hero />
         <Services />
         <Portfolio />
+        <CTASection variant="primary" />
         <About />
         <Testimonials />
+        <CTASection variant="tertiary" />
         <Contact />
       </main>
       
