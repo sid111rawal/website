@@ -7,6 +7,7 @@ import About from "@/components/sections/about";
 import Testimonials from "@/components/sections/testimonials";
 import Contact from "@/components/sections/contact";
 import Footer from "@/components/sections/footer";
+import PerformanceOptimization from "@/components/sections/performance-optimization";
 import { Helmet } from "react-helmet";
 
 export default function Home() {
@@ -27,6 +28,7 @@ export default function Home() {
         <CTASection variant="primary" />
         <About />
         <Testimonials />
+        <PerformanceOptimization />
         <CTASection variant="tertiary" />
         <Contact />
       </main>

@@ -93,12 +93,21 @@ export default function Contact() {
     setIsSubmitting(true);
     
     try {
-      await apiRequest("POST", "/api/contact", {
-        name: formData.name,
-        email: formData.email,
-        subject: formData.subject || "Contact Form Submission",
-        message: formData.message,
-      });
+      // Try to use our backend API first (if it exists)
+      try {
+        await apiRequest("POST", "/api/contact", {
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject || "Contact Form Submission",
+          message: formData.message,
+        });
+      } catch (apiError) {
+        // If API fails, let the form submit normally to Formspree
+        const form = document.getElementById('contact-form') as HTMLFormElement;
+        form.submit();
+        // Return early as form will be submitted to Formspree
+        return;
+      }
       
       toast({
         title: "Message sent!",
@@ -225,6 +234,8 @@ export default function Contact() {
               <form 
                 id="contact-form" 
                 className="bg-card rounded-xl p-8 shadow-sm border border-border"
+                action="https://formspree.io/f/yourformid" 
+                method="POST"
                 onSubmit={handleSubmit}
               >
                 <div className="mb-6">
