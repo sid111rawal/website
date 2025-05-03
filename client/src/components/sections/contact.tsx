@@ -1,12 +1,11 @@
 import { useState, type ChangeEvent, type FormEvent } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
+import { Textarea } from "@/components/ui/textarea"
 import { Checkbox } from "@/components/ui/checkbox";
 import { useToast } from "@/hooks/use-toast";
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin } from "lucide-react";
-import { apiRequest } from "@/lib/queryClient";
 import { z } from "zod";
 import { validateEmail } from "@/lib/utils";
 import { PERSONAL_INFO, SOCIAL_LINKS } from "@/config";
@@ -81,34 +80,28 @@ export default function Contact() {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = async (e: FormEvent) => {
-    e.preventDefault();
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+     e.preventDefault();
 
-    if (!validateForm()) return;
+    if (!validateForm()) {
+      return;
+    }
 
-    setIsSubmitting(true);
+    setIsSubmitting(true)
 
-    try {
-      await apiRequest("POST", "/api/contact", {
-        name: formData.name,
-        email: formData.email,
-        subject: formData.subject || "Contact Form Submission",
-        message: formData.message
-      });
-
-      toast({
-        title: "Message sent!",
-        description: "Thank you for your message. I'll get back to you soon."
-      });
-
-      setFormData({
-        name: "",
-        email: "",
-        subject: "",
-        message: "",
-        agreePrivacy: false
-      });
-    } catch (error) {
+     const form = e.currentTarget;
+      const formData = new FormData(form)
+      fetch(form.action, {
+          method: form.method,
+          body: formData,
+      })
+      .then(res => res.json())
+      .then(data => {
+        toast({
+          title: data.success ? "Message sent!" : "Failed to send message",
+          description: data.success ? "Thank you for your message. I'll get back to you soon." : "Please try again later",
+        });
+      }).catch((error) => {
       toast({
         duration: 5000,
         title: "Failed to send message",
@@ -116,7 +109,15 @@ export default function Contact() {
         variant: "destructive"
       });
     } finally {
-      setIsSubmitting(false);
+      setIsSubmitting(false)
+      setFormData({
+        name: "",
+        email: "",
+        subject: "",
+        message: "",
+        agreePrivacy: false
+      })
+      
     }
   };
 
@@ -216,6 +217,8 @@ export default function Contact() {
               <form
                 id="contact-form"
                 className="bg-card rounded-xl p-8 shadow-sm border border-border"
+                method="POST"
+                action={`https://formsubmit.co/api/form/${process.env.NEXT_PUBLIC_FORM_SUBMIT}`}
                 onSubmit={handleSubmit}
               >
                 <div className="mb-6">
@@ -293,7 +296,7 @@ export default function Contact() {
                   className="w-full bg-primary hover:bg-primary/90 text-white font-medium py-3 px-4 rounded-md"
                   disabled={isSubmitting}
                 >
-                  {isSubmitting ? "Sending..." : "Send Message"}
+                  Send Message
                 </Button>
               </form>
             </motion.div>
