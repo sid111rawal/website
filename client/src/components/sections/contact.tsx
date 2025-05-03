@@ -87,29 +87,33 @@ export default function Contact() {
       return;
     }
 
-    setIsSubmitting(true)
+    setIsSubmitting(true);
 
-     const form = e.currentTarget;
-      const formData = new FormData(form)
-      fetch(form.action, {
-          method: form.method,
-          body: formData,
-      })
-      .then(res => res.json())
-      .then(data => {
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+    fetch(form.action, {
+      method: form.method,
+      body: formData,
+    })
+      .then((res) => res.json())
+      .then((data) => {
         toast({
           title: data.success ? "Message sent!" : "Failed to send message",
-          description: data.success ? "Thank you for your message. I'll get back to you soon." : "Please try again later",
+          description: data.success
+            ? "Thank you for your message. I'll get back to you soon."
+            : "Please try again later",
         });
-      }).catch((error) => {
-      toast({
-        duration: 5000,
-        title: "Failed to send message",
-        description: error instanceof Error ? error.message : "Please try again later",
-        variant: "destructive"
+      })
+      .catch((error) => {
+        toast({
+          duration: 5000,
+          title: "Failed to send message",
+          description:
+            error instanceof Error ? error.message : "Please try again later",
+          variant: "destructive",
+        });
       });
-    } finally {
-      setIsSubmitting(false)
+    setIsSubmitting(false);
       setFormData({
         name: "",
         email: "",
@@ -117,8 +121,7 @@ export default function Contact() {
         message: "",
         agreePrivacy: false
       })
-      
-    }
+    
   };
 
   const socialLinks = [
