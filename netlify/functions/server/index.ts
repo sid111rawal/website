@@ -3,7 +3,6 @@ dotenv.config();
 
 import express, { type Request, Response, NextFunction } from "express";
 import { registerRoutes } from "./routes";
-import { log } from "./vite";
 
 const app = express();
 app.use(express.json());
@@ -28,7 +27,7 @@ app.use((req, res, next) => {
       if (capturedJsonResponse) {
         logLine += ` :: ${JSON.stringify(capturedJsonResponse)}`;
       }
-      log(logLine.length > 80 ? logLine.slice(0, 79) + "…" : logLine);
+      console.log(logLine.length > 80 ? logLine.slice(0, 79) + "…" : logLine);
     }
   });
   next();
@@ -58,7 +57,7 @@ app.use((req, res, next) => {
       : 5000;
 
   server.listen(port, "0.0.0.0", () => {
-    log(`Server running on http://0.0.0.0:${port}`);
-    log(`Mode: ${app.get("env")}`);
+    console.log(`Server running on http://0.0.0.0:${port}`);
+    console.log(`Mode: ${app.get("env")}`);
   });
 })();
