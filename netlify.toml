@@ -1,7 +1,16 @@
-[[redirects]]
+ [build]
+  command = "npm run build"
+  publish = "client/dist"
+
+ [[redirects]]
   from = "/api/*"
-  to = "/.netlify/functions/index/:splat"
+  to = "/.netlify/functions/server/:splat"
   status = 200
 
-[[functions]]
-  directory = "netlify/functions"
+ [[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+ [functions]
+   directory = "netlify/functions"
