@@ -224,6 +224,12 @@ export default function Contact() {
                 action={`https://formsubmit.co/api/form/${process.env.NEXT_PUBLIC_FORM_SUBMIT}`}
                 onSubmit={handleSubmit}
               >
+                <input type="hidden" name="_redirect" value="/" />
+                <input type="hidden" name="_captcha" value="false" />
+
+
+
+
                 <div className="mb-6">
                   <label htmlFor="name" className="block text-sm font-medium mb-2">Your Name</label>
                   <Input
