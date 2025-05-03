@@ -3,8 +3,8 @@
   publish = "client/dist"
 
  [[redirects]]
-  from = "/api/*"
-  to = "/.netlify/functions/server/:splat"
+  from = "/api/*" # Match all /api/* requests
+  to = "/.netlify/functions/server" # Route to the server function
   status = 200
 
  [[redirects]]
@@ -12,5 +12,4 @@
   to = "/index.html"
   status = 200
 
- [functions]
-   directory = "netlify/functions"
+  directory = "netlify/functions"
