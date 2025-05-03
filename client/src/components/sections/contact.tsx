@@ -218,16 +218,12 @@ export default function Contact() {
             
             <motion.div
               initial={{ opacity: 0, x: 50 }}
-              whileInView={{opacity: 1, x: 0}}
+              whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              
-              
               <form 
                 id="contact-form" 
-                className="bg-card rounded-xl p-8 shadow-sm border border-border"
-                method="POST"
                 onSubmit={handleSubmit}
               >
                 <div className="mb-6">    <label htmlFor="name" className="block text-sm font-medium mb-2">Your Name</label>                  <Input id="name" name="name" value={formData.name}
@@ -245,6 +241,7 @@ export default function Contact() {
                     placeholder="John Smith"
                     className={errors.name ? "border-destructive" : ""}
                     required
+                  />
                   />
                   {errors.name && (
                     <p className="mt-1 text-sm text-destructive">{errors.name}</p>
