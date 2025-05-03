@@ -15,7 +15,7 @@ export default function Hero() {
             <div className="relative">
               <div className="absolute inset-0 rounded-full bg-gradient-to-r from-primary to-secondary blur-lg opacity-20"></div>
               <img 
-                src="/public/images/my-new-profile.png" 
+                src="/images/my-new-profile.png" 
                 alt="Sid Rawal Pic" 
                 className="w-32 h-32 md:w-36 md:h-36 rounded-full object-contain border-4 border-background relative z-10"
               />
