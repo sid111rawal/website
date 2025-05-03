@@ -15,9 +15,9 @@ export default function Hero() {
             <div className="relative">
               <div className="absolute inset-0 rounded-full bg-gradient-to-r from-primary to-secondary blur-lg opacity-20"></div>
               <img 
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200&q=80" 
+                src="/src/images/my-new-profile.png" 
                 alt="Sid Rawal" 
-                className="w-24 h-24 md:w-28 md:h-28 rounded-full object-cover border-4 border-background relative z-10"
+                className="w-32 h-32 md:w-36 md:h-36 rounded-full object-contain border-4 border-background relative z-10"
               />
             </div>
           </motion.div>

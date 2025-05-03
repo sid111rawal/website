@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import Header from "@/components/sections/header";
 import Hero from "@/components/sections/hero";
 import Services from "@/components/sections/services";
@@ -11,6 +12,21 @@ import PerformanceOptimization from "@/components/sections/performance-optimizat
 import { Helmet } from "react-helmet";
 
 export default function Home() {
+  useEffect(() => {
+    const hash = window.location.hash;
+    if (hash === "#contact") {
+      const contactSection = document.getElementById("contact");
+      if (contactSection) {
+        contactSection.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }
+    }
+  }, []);
+  
+
+
   return (
     <>
       <Helmet>
@@ -29,8 +45,10 @@ export default function Home() {
         <About />
         <Testimonials />
         <PerformanceOptimization />
-        <CTASection variant="tertiary" />
-        <Contact />
+        <div id="contact">
+          <CTASection variant="tertiary" />
+          <Contact />
+        </div>
       </main>
       
       <Footer />

@@ -42,9 +42,9 @@ export default function ServicesPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
               >
-                <Button size="lg" className="bg-primary hover:bg-primary/90">
+                <a href="/#contact"><Button size="lg" className="bg-primary hover:bg-primary/90">
                   Schedule a Discovery Call
-                </Button>
+                </Button></a>                
               </motion.div>
             </div>
           </div>
@@ -588,7 +588,9 @@ export default function ServicesPage() {
                       <span>Deployment setup</span>
                     </li>
                   </ul>
-                  <Button className="w-full">Request Quote</Button>
+                  <a href="/#contact">
+                    <Button className="w-full">Request Quote</Button>
+                  </a>
                 </div>
               </motion.div>
               
@@ -632,7 +634,9 @@ export default function ServicesPage() {
                       <span>Premium support</span>
                     </li>
                   </ul>
-                  <Button className="w-full">Request Quote</Button>
+                  <a href="/#contact">
+                    <Button className="w-full">Request Quote</Button>
+                  </a>
                 </div>
               </motion.div>
               
@@ -673,7 +677,9 @@ export default function ServicesPage() {
                       <span>Performance optimization</span>
                     </li>
                   </ul>
-                  <Button className="w-full">Request Quote</Button>
+                  <a href="/#contact">
+                    <Button className="w-full">Request Quote</Button>
+                  </a>
                 </div>
               </motion.div>
             </div>
@@ -780,9 +786,9 @@ export default function ServicesPage() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.2 }}
               >
-                <Button size="lg" className="bg-primary hover:bg-primary/90">
+                <a href="/#contact"><Button size="lg" className="bg-primary hover:bg-primary/90">
                   Schedule Your Discovery Call
-                </Button>
+                </Button></a>
               </motion.div>
             </div>
           </div>
