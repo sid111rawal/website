@@ -222,23 +222,23 @@ export default function Contact() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              <form 
-                id="contact-form" 
-                onSubmit={handleSubmit}
-              >
-                <div className="mb-6">    <label htmlFor="name" className="block text-sm font-medium mb-2">Your Name</label>                  <Input id="name" name="name" value={formData.name}
-                    onChange={handleChange}
-                    placeholder="John Smith"
-                    className={errors.name ? "border-destructive" : ""}
-                    required
-                  />
+              <form
                 id="contact-form"
                 className="bg-card rounded-xl p-8 shadow-sm border border-border"
                 method="POST"
                 data-netlify="true"
                 action="/"
               >
-               <input type="hidden" name="form-name" value="contact" />
+                <input type="hidden" name="form-name" value="contact" />
+                <motion.div
+                  initial={{ opacity: 0, x: 50 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 0.2 }}
+                >
+
+
+
                 <div className="mb-6">    <label htmlFor="name" className="block text-sm font-medium mb-2">Your Name</label>                 <Input id="name" name="name" value={formData.name}
                     onChange={handleChange}
                     placeholder="John Smith"
@@ -261,7 +261,6 @@ export default function Contact() {
                     className={errors.email ? "border-destructive" : ""}
                     required
                   />
-                  />
                   {errors.email && (
                     <p className="mt-1 text-sm text-destructive">{errors.email}</p>
                   )}
@@ -275,7 +274,6 @@ export default function Contact() {
                     onChange={handleChange}
                     placeholder="Project Inquiry"
                   />
-                  />
                 </div>
                 <div className="mb-6">
                   <label htmlFor="message" className="block text-sm font-medium mb-2">Message</label>
@@ -288,7 +286,7 @@ export default function Contact() {
                     placeholder="Tell me about your project..."
                     className={errors.message ? "border-destructive" : ""}
                     required
-                  />
+                  />          
                   {errors.message && (
                     <p className="mt-1 text-sm text-destructive">{errors.message}</p>
                   )}
@@ -319,8 +317,9 @@ export default function Contact() {
                 >
                   {isSubmitting ? "Sending..." : "Send Message"}
                 </Button>
+                </motion.div>
               </form>
-            </motion.div>
+
           </div>
         </div>
       </div>
