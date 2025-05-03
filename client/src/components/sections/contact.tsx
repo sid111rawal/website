@@ -217,10 +217,7 @@ export default function Contact() {
                 id="contact-form"
                 className="bg-card rounded-xl p-8 shadow-sm border border-border"
                 onSubmit={handleSubmit}
-                data-netlify="true"
-                action="/"
               >
-                <input type="hidden" name="form-name" value="contact" />
                 <div className="mb-6">
                   <label htmlFor="name" className="block text-sm font-medium mb-2">Your Name</label>
                   <Input
