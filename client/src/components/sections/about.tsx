@@ -65,8 +65,8 @@ export default function About() {
                 
                 <div className="relative z-10">
                   <img 
-                    src="/src/images/my-new-profile.png"
-                    alt="Sid Rawal - Web Developer" 
+                    src="/public/images/my-new-profile.png"
+                    alt="Sid Rawal Pic" 
                     className="w-full h-auto rounded-lg mb-6"
                   />
                   
