@@ -11,7 +11,7 @@ import { z } from "zod";
 import { validateEmail } from "@/lib/utils";
 import { PERSONAL_INFO, SOCIAL_LINKS, FORM_CONFIG } from "@/config";
 
-const contactFormSchema = z.object({
+ const contactFormSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
   email: z.string().email("Please enter a valid email address"),
   subject: z.string().optional(),
@@ -21,7 +21,7 @@ const contactFormSchema = z.object({
   })
 });
 
-type ContactFormData = z.infer<typeof contactFormSchema>;
+ type ContactFormData = z.infer<typeof contactFormSchema>;
 
 export default function Contact() {
   const { toast } = useToast();
@@ -38,7 +38,7 @@ export default function Contact() {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
-    
+
     // Clear error when user types
     if (errors[name as keyof ContactFormData]) {
       setErrors(prev => {
@@ -51,7 +51,7 @@ export default function Contact() {
 
   const handleCheckboxChange = (checked: boolean) => {
     setFormData(prev => ({ ...prev, agreePrivacy: checked }));
-    
+
     if (errors.agreePrivacy) {
       setErrors(prev => {
         const newErrors = { ...prev };
@@ -63,23 +63,23 @@ export default function Contact() {
 
   const validateForm = (): boolean => {
     const newErrors: Partial<Record<keyof ContactFormData, string>> = {};
-    
+
     if (!formData.name || formData.name.length < 2) {
       newErrors.name = "Name must be at least 2 characters";
     }
-    
+
     if (!formData.email || !validateEmail(formData.email)) {
       newErrors.email = "Please enter a valid email address";
     }
-    
+
     if (!formData.message || formData.message.length < 10) {
       newErrors.message = "Message must be at least 10 characters";
     }
-    
+
     if (!formData.agreePrivacy) {
       newErrors.agreePrivacy = "You must agree to the privacy policy";
     }
-    
+
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
@@ -87,7 +87,7 @@ export default function Contact() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    if (!validateForm()) {
+    if (!validateForm) {
       return;
     }
     
@@ -163,7 +163,7 @@ export default function Contact() {
                   <div className="w-10 h-10 rounded-full bg-primary/10 dark:bg-primary/20 flex items-center justify-center flex-shrink-0 text-primary">
                     <Mail className="h-5 w-5" />
                   </div>
-                  <div>
+                  <div >
                     <h3 className="font-medium mb-1">Email</h3>
                     <a href={`mailto:${PERSONAL_INFO.email}`} className="text-primary hover:underline">{PERSONAL_INFO.email}</a>
                   </div>
@@ -218,10 +218,12 @@ export default function Contact() {
             
             <motion.div
               initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              whileInView={{opacity: 1, x: 0}}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
+              
+              
               <form 
                 id="contact-form" 
                 className="bg-card rounded-xl p-8 shadow-sm border border-border"
@@ -229,6 +231,16 @@ export default function Contact() {
                 onSubmit={handleSubmit}
               >
                 <div className="mb-6">    <label htmlFor="name" className="block text-sm font-medium mb-2">Your Name</label>                  <Input id="name" name="name" value={formData.name}
+
+               <form
+                id="contact-form"
+                className="bg-card rounded-xl p-8 shadow-sm border border-border"
+                method="POST"
+                data-netlify="true"
+                action="/"
+              >
+               <input type="hidden" name="form-name" value="contact" />
+                <div className="mb-6">    <label htmlFor="name" className="block text-sm font-medium mb-2">Your Name</label>                 <Input id="name" name="name" value={formData.name}
                     onChange={handleChange}
                     placeholder="John Smith"
                     className={errors.name ? "border-destructive" : ""}
@@ -313,4 +325,4 @@ export default function Contact() {
       </div>
     </section>
   );
-}
+ }
