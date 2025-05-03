@@ -227,8 +227,11 @@ export default function Contact() {
                 onSubmit={handleSubmit}
               >
                 <div className="mb-6">    <label htmlFor="name" className="block text-sm font-medium mb-2">Your Name</label>                  <Input id="name" name="name" value={formData.name}
-
-               <form
+                    onChange={handleChange}
+                    placeholder="John Smith"
+                    className={errors.name ? "border-destructive" : ""}
+                    required
+                  />
                 id="contact-form"
                 className="bg-card rounded-xl p-8 shadow-sm border border-border"
                 method="POST"
@@ -241,7 +244,6 @@ export default function Contact() {
                     placeholder="John Smith"
                     className={errors.name ? "border-destructive" : ""}
                     required
-                  />
                   />
                   {errors.name && (
                     <p className="mt-1 text-sm text-destructive">{errors.name}</p>
@@ -259,6 +261,7 @@ export default function Contact() {
                     className={errors.email ? "border-destructive" : ""}
                     required
                   />
+                  />
                   {errors.email && (
                     <p className="mt-1 text-sm text-destructive">{errors.email}</p>
                   )}
@@ -271,6 +274,7 @@ export default function Contact() {
                     value={formData.subject}
                     onChange={handleChange}
                     placeholder="Project Inquiry"
+                  />
                   />
                 </div>
                 <div className="mb-6">
