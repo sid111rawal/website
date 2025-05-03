@@ -3,7 +3,7 @@ dotenv.config();
 
 import express, { type Request, Response, NextFunction } from "express";
 import { registerRoutes } from "./routes";
-import { setupVite, serveStatic, log } from "./vite";
+import { log } from "./vite";
 
 const app = express();
 app.use(express.json());
@@ -45,12 +45,6 @@ app.use((req, res, next) => {
     throw err;
   });
 
-  // Vite setup (unchanged)
-  if (app.get("env") === "development") {
-    await setupVite(app, server);
-  } else {
-    serveStatic(app);
-  }
 
   // PORT RESOLUTION FIX ==========================================
   // 1. Check for direct argument (9003 in your case)
