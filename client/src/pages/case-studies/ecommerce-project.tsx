@@ -20,7 +20,7 @@ export default function EcommerceProjectCaseStudy() {
   return (
     <>
       <Helmet>
-        <title>Fashion E-commerce Platform Case Study | John Doe</title>
+        <title>Fashion E-commerce Platform Case Study</title>
         <meta 
           name="description" 
           content="Case study: How we transformed an online fashion retailer's platform, increasing conversions by 35% and reducing cart abandonment by 25%." 
@@ -33,7 +33,7 @@ export default function EcommerceProjectCaseStudy() {
       
       <Header />
       
-      <main>
+      <main className="text-gray-900 dark:text-gray-100">
         {/* Hero Section */}
         <section className="py-20 bg-gradient-to-br from-primary/5 to-secondary/5">
           <div className="container mx-auto px-4 md:px-6">
