@@ -336,19 +336,19 @@ export default function EcommerceProjectCaseStudy() {
                         We selected a modern, scalable tech stack that would provide excellent performance and flexibility:
                       </p>
                       <ul className="space-y-1 text-sm">
-                        <li className="flex items-center gap-2">
+                        <li className="flex items-center gap-2 text-gray-900 dark:text-gray-100">
                           <CheckCircle className="h-4 w-4 text-green-500" />
                           <span>React for the frontend UI</span>
                         </li>
-                        <li className="flex items-center gap-2">
+                        <li className="flex items-center gap-2 text-gray-900 dark:text-gray-100">
                           <CheckCircle className="h-4 w-4 text-green-500" />
                           <span>Node.js for API development</span>
                         </li>
-                        <li className="flex items-center gap-2">
+                        <li className="flex items-center gap-2 text-gray-900 dark:text-gray-100">
                           <CheckCircle className="h-4 w-4 text-green-500" />
                           <span>PostgreSQL for data storage</span>
                         </li>
-                        <li className="flex items-center gap-2">
+                        <li className="flex items-center gap-2 text-gray-900 dark:text-gray-100">
                           <CheckCircle className="h-4 w-4 text-green-500" />
                           <span>Headless CMS for content management</span>
                         </li>
@@ -361,11 +361,11 @@ export default function EcommerceProjectCaseStudy() {
                         We applied a mobile-first design philosophy with a focus on key shopping journeys:
                       </p>
                       <ul className="space-y-1 text-sm">
-                        <li className="flex items-center gap-2">
+                        <li className="flex items-center gap-2 text-gray-900 dark:text-gray-100">
                           <CheckCircle className="h-4 w-4 text-green-500" />
                           <span>Simplified navigation structure</span>
                         </li>
-                        <li className="flex items-center gap-2">
+                        <li className="flex items-center gap-2 text-gray-900 dark:text-gray-100">
                           <CheckCircle className="h-4 w-4 text-green-500" />
                           <span>Visual-focused product browsing</span>
                         </li>
@@ -373,7 +373,7 @@ export default function EcommerceProjectCaseStudy() {
                           <CheckCircle className="h-4 w-4 text-green-500" />
                           <span>Single-page checkout experience</span>
                         </li>
-                        <li className="flex items-center gap-2">
+                        <li className="flex items-center gap-2 text-gray-900 dark:text-gray-100">
                           <CheckCircle className="h-4 w-4 text-green-500" />
                           <span>Personalized product recommendations</span>
                         </li>
@@ -386,19 +386,19 @@ export default function EcommerceProjectCaseStudy() {
                         We implemented robust performance strategies to ensure fast loading on all devices:
                       </p>
                       <ul className="space-y-1 text-sm">
-                        <li className="flex items-center gap-2">
+                        <li className="flex items-center gap-2 text-gray-900 dark:text-gray-100">
                           <CheckCircle className="h-4 w-4 text-green-500" />
                           <span>Server-side rendering for fast initial loads</span>
                         </li>
-                        <li className="flex items-center gap-2">
+                        <li className="flex items-center gap-2 text-gray-900 dark:text-gray-100">
                           <CheckCircle className="h-4 w-4 text-green-500" />
                           <span>Advanced image optimization pipeline</span>
                         </li>
-                        <li className="flex items-center gap-2">
+                        <li className="flex items-center gap-2 text-gray-900 dark:text-gray-100">
                           <CheckCircle className="h-4 w-4 text-green-500" />
                           <span>Code splitting and lazy loading</span>
                         </li>
-                        <li className="flex items-center gap-2">
+                        <li className="flex items-center gap-2 text-gray-900 dark:text-gray-100">
                           <CheckCircle className="h-4 w-4 text-green-500" />
                           <span>Global CDN with edge caching</span>
                         </li>
@@ -411,19 +411,19 @@ export default function EcommerceProjectCaseStudy() {
                         We designed a robust integration layer to connect with existing systems:
                       </p>
                       <ul className="space-y-1 text-sm">
-                        <li className="flex items-center gap-2">
+                        <li className="flex items-center gap-2 text-gray-900 dark:text-gray-100">
                           <CheckCircle className="h-4 w-4 text-green-500" />
                           <span>Real-time inventory synchronization</span>
                         </li>
-                        <li className="flex items-center gap-2">
+                        <li className="flex items-center gap-2 text-gray-900 dark:text-gray-100">
                           <CheckCircle className="h-4 w-4 text-green-500" />
                           <span>Unified customer profiles across channels</span>
                         </li>
-                        <li className="flex items-center gap-2">
+                        <li className="flex items-center gap-2 text-gray-900 dark:text-gray-100">
                           <CheckCircle className="h-4 w-4 text-green-500" />
                           <span>Omnichannel order management</span>
                         </li>
-                        <li className="flex items-center gap-2">
+                        <li className="flex items-center gap-2 text-gray-900 dark:text-gray-100">
                           <CheckCircle className="h-4 w-4 text-green-500" />
                           <span>Analytics data pipeline</span>
                         </li>
@@ -661,19 +661,19 @@ export default function EcommerceProjectCaseStudy() {
                         We reduced page load times from 5.2 seconds to 1.7 seconds through:
                       </p>
                       <ul className="space-y-2">
-                        <li className="flex items-start gap-2">
+                        <li className="flex items-start gap-2 text-gray-900 dark:text-gray-100">
                           <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
                           <span>Automated image optimization pipeline with WebP format and responsive sizes</span>
                         </li>
-                        <li className="flex items-start gap-2">
+                        <li className="flex items-start gap-2 text-gray-900 dark:text-gray-100">
                           <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
                           <span>Server-side rendering for critical pages with client-side hydration</span>
                         </li>
-                        <li className="flex items-start gap-2">
+                        <li className="flex items-start gap-2 text-gray-900 dark:text-gray-100">
                           <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
                           <span>Efficient bundling with code splitting and tree shaking</span>
                         </li>
-                        <li className="flex items-start gap-2">
+                        <li className="flex items-start gap-2 text-gray-900 dark:text-gray-100">
                           <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
                           <span>Strategic caching with service workers for offline capabilities</span>
                         </li>
@@ -686,19 +686,19 @@ export default function EcommerceProjectCaseStudy() {
                         Enhanced security was implemented throughout:
                       </p>
                       <ul className="space-y-2">
-                        <li className="flex items-start gap-2">
+                        <li className="flex items-start gap-2 text-gray-900 dark:text-gray-100">
                           <Lock className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
                           <span>PCI-DSS compliant payment processing with tokenization</span>
                         </li>
-                        <li className="flex items-start gap-2">
+                        <li className="flex items-start gap-2 text-gray-900 dark:text-gray-100">
                           <Lock className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
                           <span>GDPR-compliant data handling with explicit consent management</span>
                         </li>
-                        <li className="flex items-start gap-2">
+                        <li className="flex items-start gap-2 text-gray-900 dark:text-gray-100">
                           <Lock className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
                           <span>Protection against common vulnerabilities (XSS, CSRF, injection)</span>
                         </li>
-                        <li className="flex items-start gap-2">
+                        <li className="flex items-start gap-2 text-gray-900 dark:text-gray-100">
                           <Lock className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
                           <span>Rate limiting and bot protection to prevent abuse</span>
                         </li>
@@ -711,19 +711,19 @@ export default function EcommerceProjectCaseStudy() {
                         The architecture was designed to handle growth:
                       </p>
                       <ul className="space-y-2">
-                        <li className="flex items-start gap-2">
+                        <li className="flex items-start gap-2 text-gray-900 dark:text-gray-100">
                           <TrendingUp className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
                           <span>Containerized microservices deployed with Kubernetes</span>
                         </li>
-                        <li className="flex items-start gap-2">
+                        <li className="flex items-start gap-2 text-gray-900 dark:text-gray-100">
                           <TrendingUp className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
                           <span>Auto-scaling infrastructure based on demand patterns</span>
                         </li>
-                        <li className="flex items-start gap-2">
+                        <li className="flex items-start gap-2 text-gray-900 dark:text-gray-100">
                           <TrendingUp className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
                           <span>Database sharding for efficient data management</span>
                         </li>
-                        <li className="flex items-start gap-2">
+                        <li className="flex items-start gap-2 text-gray-900 dark:text-gray-100">
                           <TrendingUp className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
                           <span>Global CDN with edge caching for international customers</span>
                         </li>
@@ -798,19 +798,19 @@ export default function EcommerceProjectCaseStudy() {
                   </p>
                   
                   <ul className="space-y-2 mb-8">
-                    <li className="flex items-start gap-2">
+                    <li className="flex items-start gap-2 text-gray-900 dark:text-gray-100">
                       <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
                       <span><strong>Enhanced brand perception</strong> with a digital experience that matched the premium positioning of the products</span>
                     </li>
-                    <li className="flex items-start gap-2">
+                    <li className="flex items-start gap-2 text-gray-900 dark:text-gray-100">
                       <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
                       <span><strong>Improved operational efficiency</strong> through the integration of online and in-store inventory and order management</span>
                     </li>
-                    <li className="flex items-start gap-2">
+                    <li className="flex items-start gap-2 text-gray-900 dark:text-gray-100">
                       <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
                       <span><strong>Valuable customer insights</strong> from the analytics implementation that informed both online and in-store merchandising decisions</span>
                     </li>
-                    <li className="flex items-start gap-2">
+                    <li className="flex items-start gap-2 text-gray-900 dark:text-gray-100">
                       <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
                       <span><strong>Increased customer loyalty</strong> with repeat purchase rate increasing by 18% within six months of launch</span>
                     </li>
@@ -846,19 +846,19 @@ export default function EcommerceProjectCaseStudy() {
                   </p>
                   
                   <ul className="space-y-2 mb-6">
-                    <li className="flex items-start gap-2">
+                    <li className="flex items-start gap-2 text-gray-900 dark:text-gray-100">
                       <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
                       <span>A thorough discovery process that uncovered root issues beyond surface symptoms</span>
                     </li>
-                    <li className="flex items-start gap-2">
+                    <li className="flex items-start gap-2 text-gray-900 dark:text-gray-100">
                       <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
                       <span>Mobile-first design that aligned with actual customer behavior</span>
                     </li>
-                    <li className="flex items-start gap-2">
+                    <li className="flex items-start gap-2 text-gray-900 dark:text-gray-100">
                       <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
                       <span>Strategic technical choices that prioritized performance and scalability</span>
                     </li>
-                    <li className="flex items-start gap-2">
+                    <li className="flex items-start gap-2 text-gray-900 dark:text-gray-100">
                       <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
                       <span>Continuous collaboration with stakeholders throughout the development process</span>
                     </li>
