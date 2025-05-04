@@ -110,15 +110,15 @@ export default function EcommerceProjectCaseStudy() {
                     </div>
                     <div className="flex items-start gap-2 text-gray-900 dark:text-gray-100">
                       <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0 mt-1" />
-                      <span><strong>25% reduction</strong> in cart abandonment</span>
+                      <span><strong className="text-gray-900 dark:text-gray-100">25% reduction</strong> in cart abandonment</span>
                     </div>
                     <div className="flex items-start gap-2 text-gray-900 dark:text-gray-100">
                       <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0 mt-1" />
-                      <span><strong>52% growth</strong> in mobile sales</span>
+                      <span><strong className="text-gray-900 dark:text-gray-100">52% growth</strong> in mobile sales</span>
                     </div>
                     <div className="flex items-start gap-2 text-gray-900 dark:text-gray-100">
                       <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0 mt-1" />
-                      <span><strong>3x increase</strong> in page load speed</span>
+                      <span><strong className="text-gray-900 dark:text-gray-100">3x increase</strong> in page load speed</span>
                     </div>
                   </div>
                 </div>
@@ -800,19 +800,19 @@ export default function EcommerceProjectCaseStudy() {
                   <ul className="space-y-2 mb-8 text-gray-900 dark:text-gray-100">
                     <li className="flex items-start gap-2 text-gray-900 dark:text-gray-100">
                       <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
-                      <span><strong>Enhanced brand perception</strong> with a digital experience that matched the premium positioning of the products</span>
+                      <span><strong className="text-gray-900 dark:text-gray-100">Enhanced brand perception</strong> with a digital experience that matched the premium positioning of the products</span>
                     </li>
                     <li className="flex items-start gap-2 text-gray-900 dark:text-gray-100">
                       <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
-                      <span><strong>Improved operational efficiency</strong> through the integration of online and in-store inventory and order management</span>
+                      <span><strong className="text-gray-900 dark:text-gray-100">Improved operational efficiency</strong> through the integration of online and in-store inventory and order management</span>
                     </li>
                     <li className="flex items-start gap-2 text-gray-900 dark:text-gray-100">
                       <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
-                      <span><strong>Valuable customer insights</strong> from the analytics implementation that informed both online and in-store merchandising decisions</span>
+                      <span><strong className="text-gray-900 dark:text-gray-100">Valuable customer insights</strong> from the analytics implementation that informed both online and in-store merchandising decisions</span>
                     </li>
                     <li className="flex items-start gap-2 text-gray-900 dark:text-gray-100">
                       <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
-                      <span><strong>Increased customer loyalty</strong> with repeat purchase rate increasing by 18% within six months of launch</span>
+                      <span><strong className="text-gray-900 dark:text-gray-100">Increased customer loyalty</strong> with repeat purchase rate increasing by 18% within six months of launch</span>
                     </li>
                   </ul>
                   
