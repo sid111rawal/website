@@ -76,7 +76,7 @@ export default function EcommerceProjectCaseStudy() {
                   <CheckCircle className="h-5 w-5 text-green-500" />
                   <span>Completed in 2024</span>
                 </div>
-                <div className="flex items-center gap-2 text-muted-foreground">
+                <div className="flex items-center gap-2 text-muted-foreground ">
                   <Sparkles className="h-5 w-5 text-yellow-500" />
                   <span>35% Conversion Increase</span>
                 </div>
@@ -103,20 +103,20 @@ export default function EcommerceProjectCaseStudy() {
                   <p className="text-muted-foreground mb-6">
                     We completely redesigned and rebuilt their e-commerce platform with a focus on mobile-first design, streamlined checkout, personalized product discovery, and performance optimization.
                   </p>
-                  <div className="space-y-2 mb-6">
-                    <div className="flex items-start gap-2">
+                  <div className="space-y-2 mb-6 text-gray-900 dark:text-gray-100">
+                    <div className="flex items-start gap-2 text-gray-900 dark:text-gray-100">
                       <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0 mt-1" />
                       <span><strong>35% increase</strong> in conversion rate</span>
                     </div>
-                    <div className="flex items-start gap-2">
+                    <div className="flex items-start gap-2 text-gray-900 dark:text-gray-100">
                       <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0 mt-1" />
                       <span><strong>25% reduction</strong> in cart abandonment</span>
                     </div>
-                    <div className="flex items-start gap-2">
+                    <div className="flex items-start gap-2 text-gray-900 dark:text-gray-100">
                       <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0 mt-1" />
                       <span><strong>52% growth</strong> in mobile sales</span>
                     </div>
-                    <div className="flex items-start gap-2">
+                    <div className="flex items-start gap-2 text-gray-900 dark:text-gray-100">
                       <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0 mt-1" />
                       <span><strong>3x increase</strong> in page load speed</span>
                     </div>
@@ -787,8 +787,8 @@ export default function EcommerceProjectCaseStudy() {
                         <span className="font-bold">SL</span>
                       </div>
                       <div>
-                        <p className="font-bold">Sarah Lewis</p>
-                        <p className="text-sm text-muted-foreground">CEO, FashionHub</p>
+                        <p className="font-bold text-gray-900 dark:text-gray-100">Sarah Lewis</p>
+                        <p className="text-sm text-muted-foreground text-gray-900 dark:text-gray-100">CEO, FashionHub</p>
                       </div>
                     </div>
                   </div>
@@ -797,7 +797,7 @@ export default function EcommerceProjectCaseStudy() {
                     Beyond the quantitative metrics, the project delivered several qualitative benefits:
                   </p>
                   
-                  <ul className="space-y-2 mb-8">
+                  <ul className="space-y-2 mb-8 text-gray-900 dark:text-gray-100">
                     <li className="flex items-start gap-2 text-gray-900 dark:text-gray-100">
                       <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
                       <span><strong>Enhanced brand perception</strong> with a digital experience that matched the premium positioning of the products</span>
