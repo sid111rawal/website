@@ -106,7 +106,7 @@ export default function EcommerceProjectCaseStudy() {
                   <div className="space-y-2 mb-6 text-gray-900 dark:text-gray-100">
                     <div className="flex items-start gap-2 text-gray-900 dark:text-gray-100">
                       <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0 mt-1" />
-                      <span><strong>35% increase</strong> in conversion rate</span>
+                      <span className="text-gray-900 dark:text-gray-100"><strong>35% increase</strong> in conversion rate</span>
                     </div>
                     <div className="flex items-start gap-2 text-gray-900 dark:text-gray-100">
                       <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0 mt-1" />
