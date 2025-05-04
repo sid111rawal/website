@@ -369,7 +369,7 @@ export default function EcommerceProjectCaseStudy() {
                           <CheckCircle className="h-4 w-4 text-green-500" />
                           <span>Visual-focused product browsing</span>
                         </li>
-                        <li className="flex items-center gap-2">
+                        <li className="flex items-center gap-2 text-gray-900 dark:text-gray-100">
                           <CheckCircle className="h-4 w-4 text-green-500" />
                           <span>Single-page checkout experience</span>
                         </li>
@@ -779,7 +779,7 @@ export default function EcommerceProjectCaseStudy() {
                   </div>
                   
                   <div className="bg-card p-6 rounded-xl shadow-sm border border-border mb-8">
-                    <blockquote className="text-lg italic mb-4">
+                    <blockquote className="text-lg italic mb-4 text-gray-900 dark:text-gray-100">
                       "The transformation of our e-commerce platform has exceeded our expectations in every way. Not only have we seen significant growth in sales and customer engagement, but we've also received overwhelmingly positive feedback from our customers about the improved shopping experience. This has truly been a game-changer for our business."
                     </blockquote>
                     <div className="flex items-center gap-4">
