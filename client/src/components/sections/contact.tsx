@@ -167,7 +167,7 @@ export default function Contact() {
               id="contact-form"
               className="bg-card rounded-xl p-8 shadow-sm border border-border"
               method="POST"
-              action={`https://formsubmit.co/ajax/${process.env.NEXT_PUBLIC_FORM_SUBMIT}`}
+              action={`https://formsubmit.co/ajax/${encodeURIComponent(FORM_CONFIG.formSubmitEmail)}`}
               onSubmit={handleSubmit}
             >
               <input type="hidden" name="_redirect" value="/" />
