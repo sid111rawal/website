@@ -191,7 +191,7 @@ export default function EcommerceProjectCaseStudy() {
                       <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-4">
                         <Smartphone className="h-6 w-6" />
                       </div>
-                      <h3 className="font-bold mb-2">Poor Mobile Experience</h3>
+                      <h3 className="font-bold mb-2 text-gray-900 dark:text-gray-100">Poor Mobile Experience</h3>
                       <p className="text-sm text-muted-foreground">
                         Despite 70% of their traffic coming from mobile devices, their site was difficult to navigate on smartphones, with tiny product images and a cumbersome checkout process.
                       </p>
@@ -212,7 +212,7 @@ export default function EcommerceProjectCaseStudy() {
                       <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-4">
                         <Search className="h-6 w-6" />
                       </div>
-                      <h3 className="font-bold mb-2">Limited Product Discovery</h3>
+                      <h3 className="font-bold mb-2 text-gray-900 dark:text-gray-100">Limited Product Discovery</h3>
                       <p className="text-sm text-muted-foreground">
                         Ineffective search and filtering capabilities made finding specific items difficult, and there was no personalization to help customers discover relevant products.
                       </p>
@@ -222,7 +222,7 @@ export default function EcommerceProjectCaseStudy() {
                       <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-4">
                         <BarChart3 className="h-6 w-6" />
                       </div>
-                      <h3 className="font-bold mb-2">Technical Debt</h3>
+                      <h3 className="font-bold mb-2 text-gray-900 dark:text-gray-100">Technical Debt</h3>
                       <p className="text-sm text-muted-foreground">
                         The existing platform had accumulated significant technical debt with outdated libraries, poor performance, and security vulnerabilities that made updates difficult.
                       </p>
@@ -260,7 +260,7 @@ export default function EcommerceProjectCaseStudy() {
                         1
                       </div>
                       <div>
-                        <h3 className="text-xl font-bold mb-2">User Research</h3>
+                        <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-gray-100">User Research</h3>
                         <p className="text-muted-foreground">
                           We conducted interviews with 20 current customers and analyzed 500+ customer support interactions to identify pain points and opportunities. Heat mapping and session recordings on the existing site revealed navigation issues and abandonment triggers.
                         </p>
@@ -272,7 +272,7 @@ export default function EcommerceProjectCaseStudy() {
                         2
                       </div>
                       <div>
-                        <h3 className="text-xl font-bold mb-2">Competitive Analysis</h3>
+                        <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-gray-100">Competitive Analysis</h3>
                         <p className="text-muted-foreground">
                           We benchmarked FashionHub against 8 competitors to identify industry best practices and differentiation opportunities, with special attention to mobile experiences and checkout processes.
                         </p>
@@ -284,7 +284,7 @@ export default function EcommerceProjectCaseStudy() {
                         3
                       </div>
                       <div>
-                        <h3 className="text-xl font-bold mb-2">Technical Audit</h3>
+                        <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-gray-100">Technical Audit</h3>
                         <p className="text-muted-foreground">
                           Our comprehensive audit of the existing platform revealed critical performance bottlenecks, including unoptimized images, excessive JavaScript, and database query inefficiencies that were causing 5+ second load times.
                         </p>
@@ -296,7 +296,7 @@ export default function EcommerceProjectCaseStudy() {
                         4
                       </div>
                       <div>
-                        <h3 className="text-xl font-bold mb-2">Business Workshop</h3>
+                        <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-gray-100">Business Workshop</h3>
                         <p className="text-muted-foreground">
                           We facilitated a 2-day workshop with FashionHub's leadership team to align on business goals, KPIs, and brand positioning, ensuring our solution would drive meaningful business outcomes beyond just technical improvements.
                         </p>
@@ -331,7 +331,7 @@ export default function EcommerceProjectCaseStudy() {
                   
                   <div className="grid sm:grid-cols-2 gap-6 mb-6">
                     <div className="bg-card p-6 rounded-xl shadow-sm border border-border">
-                      <h3 className="font-bold mb-2">Technology Stack</h3>
+                      <h3 className="font-bold mb-2 text-gray-900 dark:text-gray-100">Technology Stack</h3>
                       <p className="text-sm text-muted-foreground mb-4">
                         We selected a modern, scalable tech stack that would provide excellent performance and flexibility:
                       </p>
@@ -356,7 +356,7 @@ export default function EcommerceProjectCaseStudy() {
                     </div>
                     
                     <div className="bg-card p-6 rounded-xl shadow-sm border border-border">
-                      <h3 className="font-bold mb-2">User Experience Approach</h3>
+                      <h3 className="font-bold mb-2 text-gray-900 dark:text-gray-100">User Experience Approach</h3>
                       <p className="text-sm text-muted-foreground mb-4">
                         We applied a mobile-first design philosophy with a focus on key shopping journeys:
                       </p>
@@ -381,7 +381,7 @@ export default function EcommerceProjectCaseStudy() {
                     </div>
                     
                     <div className="bg-card p-6 rounded-xl shadow-sm border border-border">
-                      <h3 className="font-bold mb-2">Performance Optimization</h3>
+                      <h3 className="font-bold mb-2 text-gray-900 dark:text-gray-100">Performance Optimization</h3>
                       <p className="text-sm text-muted-foreground mb-4">
                         We implemented robust performance strategies to ensure fast loading on all devices:
                       </p>
@@ -406,7 +406,7 @@ export default function EcommerceProjectCaseStudy() {
                     </div>
                     
                     <div className="bg-card p-6 rounded-xl shadow-sm border border-border">
-                      <h3 className="font-bold mb-2">Integration Architecture</h3>
+                      <h3 className="font-bold mb-2 text-gray-900 dark:text-gray-100">Integration Architecture</h3>
                       <p className="text-sm text-muted-foreground mb-4">
                         We designed a robust integration layer to connect with existing systems:
                       </p>
@@ -462,7 +462,7 @@ export default function EcommerceProjectCaseStudy() {
                         1
                       </div>
                       <div className="pl-6">
-                        <h3 className="text-xl font-bold mb-2">Foundation Building (Weeks 1-3)</h3>
+                        <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-gray-100">Foundation Building (Weeks 1-3)</h3>
                         <p className="text-muted-foreground">
                           We established the core technical infrastructure, including development environments, CI/CD pipelines, and the baseline architecture. The design team finalized the design system and high-fidelity mockups for key user journeys.
                         </p>
@@ -474,7 +474,7 @@ export default function EcommerceProjectCaseStudy() {
                         2
                       </div>
                       <div className="pl-6">
-                        <h3 className="text-xl font-bold mb-2">Core Functionality (Weeks 4-8)</h3>
+                        <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-gray-100">Core Functionality (Weeks 4-8)</h3>
                         <p className="text-muted-foreground">
                           We implemented the product catalog, search/filtering capabilities, user accounts, and shopping cart functionality. This phase included regular user testing sessions with target customers to validate design decisions.
                         </p>
@@ -486,7 +486,7 @@ export default function EcommerceProjectCaseStudy() {
                         3
                       </div>
                       <div className="pl-6">
-                        <h3 className="text-xl font-bold mb-2">Advanced Features (Weeks 9-13)</h3>
+                        <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-gray-100">Advanced Features (Weeks 9-13)</h3>
                         <p className="text-muted-foreground">
                           We built the streamlined checkout process, personalization engine, integrated payment gateways, and completed the integrations with inventory and order management systems. This phase also included comprehensive performance optimization.
                         </p>
@@ -498,7 +498,7 @@ export default function EcommerceProjectCaseStudy() {
                         4
                       </div>
                       <div className="pl-6">
-                        <h3 className="text-xl font-bold mb-2">Testing and Launch (Weeks 14-16)</h3>
+                        <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-gray-100">Testing and Launch (Weeks 14-16)</h3>
                         <p className="text-muted-foreground">
                           Comprehensive testing included load testing, security audits, cross-browser compatibility checks, and a beta program with select customers. We implemented analytics tracking and conducted team training before a phased launch approach.
                         </p>
@@ -539,7 +539,7 @@ export default function EcommerceProjectCaseStudy() {
                     />
                   </div>
                   <div className="p-6">
-                    <h3 className="text-xl font-bold mb-3">Advanced Product Discovery</h3>
+                    <h3 className="text-xl font-bold mb-3 text-gray-900 dark:text-gray-100">Advanced Product Discovery</h3>
                     <p className="text-muted-foreground mb-4">
                       We implemented an intuitive filtering system with instant results, visual attribute selection, and smart search with autocomplete and typo tolerance. The system remembers user preferences to personalize future browsing sessions.
                     </p>
@@ -567,7 +567,7 @@ export default function EcommerceProjectCaseStudy() {
                     />
                   </div>
                   <div className="p-6">
-                    <h3 className="text-xl font-bold mb-3">Streamlined Checkout</h3>
+                    <h3 className="text-xl font-bold mb-3 text-gray-900 dark:text-gray-100">Streamlined Checkout</h3>
                     <p className="text-muted-foreground mb-4">
                       We reduced the checkout process from 5 steps to a single-page experience with intelligent form validation, multiple payment options, and address auto-completion. Express checkout options remember returning customers' preferences.
                     </p>
@@ -595,7 +595,7 @@ export default function EcommerceProjectCaseStudy() {
                     />
                   </div>
                   <div className="p-6">
-                    <h3 className="text-xl font-bold mb-3">Mobile-First Design</h3>
+                    <h3 className="text-xl font-bold mb-3 text-gray-900 dark:text-gray-100">Mobile-First Design</h3>
                     <p className="text-muted-foreground mb-4">
                       The entire interface was redesigned with mobile users as the priority, featuring touch-friendly elements, simplified navigation, and optimized product imagery. The responsive design scales seamlessly across all device sizes.
                     </p>
@@ -623,7 +623,7 @@ export default function EcommerceProjectCaseStudy() {
                     />
                   </div>
                   <div className="p-6">
-                    <h3 className="text-xl font-bold mb-3">Personalization Engine</h3>
+                    <h3 className="text-xl font-bold mb-3 text-gray-900 dark:text-gray-100">Personalization Engine</h3>
                     <p className="text-muted-foreground mb-4">
                       We implemented a sophisticated recommendation system that analyzes browsing patterns, purchase history, and similar customer profiles to suggest relevant products throughout the shopping journey.
                     </p>
@@ -656,7 +656,7 @@ export default function EcommerceProjectCaseStudy() {
                   
                   <div className="space-y-6 mb-6">
                     <div className="bg-card p-6 rounded-xl shadow-sm border border-border">
-                      <h3 className="font-bold mb-2">Performance Optimization</h3>
+                      <h3 className="font-bold mb-2 text-gray-900 dark:text-gray-100">Performance Optimization</h3>
                       <p className="text-muted-foreground mb-4">
                         We reduced page load times from 5.2 seconds to 1.7 seconds through:
                       </p>
@@ -681,7 +681,7 @@ export default function EcommerceProjectCaseStudy() {
                     </div>
                     
                     <div className="bg-card p-6 rounded-xl shadow-sm border border-border">
-                      <h3 className="font-bold mb-2">Security Measures</h3>
+                      <h3 className="font-bold mb-2 text-gray-900 dark:text-gray-100">Security Measures</h3>
                       <p className="text-muted-foreground mb-4">
                         Enhanced security was implemented throughout:
                       </p>
@@ -706,7 +706,7 @@ export default function EcommerceProjectCaseStudy() {
                     </div>
                     
                     <div className="bg-card p-6 rounded-xl shadow-sm border border-border">
-                      <h3 className="font-bold mb-2">Scalability Solutions</h3>
+                      <h3 className="font-bold mb-2 text-gray-900 dark:text-gray-100">Scalability Solutions</h3>
                       <p className="text-muted-foreground mb-4">
                         The architecture was designed to handle growth:
                       </p>
@@ -758,22 +758,22 @@ export default function EcommerceProjectCaseStudy() {
                   
                   <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 mb-8">
                     <div className="bg-card p-6 rounded-xl shadow-sm border border-border text-center">
-                      <h3 className="text-4xl font-bold text-primary mb-2">+35%</h3>
+                      <h3 className="text-4xl font-bold text-primary mb-2 text-gray-900 dark:text-gray-100">+35%</h3>
                       <p className="text-sm text-muted-foreground">Conversion Rate</p>
                     </div>
                     
                     <div className="bg-card p-6 rounded-xl shadow-sm border border-border text-center">
-                      <h3 className="text-4xl font-bold text-primary mb-2">-25%</h3>
+                      <h3 className="text-4xl font-bold text-primary mb-2 text-gray-900 dark:text-gray-100">-25%</h3>
                       <p className="text-sm text-muted-foreground">Cart Abandonment</p>
                     </div>
                     
                     <div className="bg-card p-6 rounded-xl shadow-sm border border-border text-center">
-                      <h3 className="text-4xl font-bold text-primary mb-2">+52%</h3>
+                      <h3 className="text-4xl font-bold text-primary mb-2 text-gray-900 dark:text-gray-100">+52%</h3>
                       <p className="text-sm text-muted-foreground">Mobile Sales</p>
                     </div>
                     
                     <div className="bg-card p-6 rounded-xl shadow-sm border border-border text-center">
-                      <h3 className="text-4xl font-bold text-primary mb-2">+22%</h3>
+                      <h3 className="text-4xl font-bold text-primary mb-2 text-gray-900 dark:text-gray-100">+22%</h3>
                       <p className="text-sm text-muted-foreground">Avg. Order Value</p>
                     </div>
                   </div>
@@ -869,7 +869,7 @@ export default function EcommerceProjectCaseStudy() {
                   </p>
                   
                   <div className="bg-card rounded-xl p-8 shadow-sm border border-border text-center">
-                    <h3 className="text-xl font-bold mb-4">Ready to Transform Your E-Commerce Experience?</h3>
+                    <h3 className="text-xl font-bold mb-4 text-gray-900 dark:text-gray-100">Ready to Transform Your E-Commerce Experience?</h3>
                     <p className="text-muted-foreground mb-6">
                       Let's discuss how we can apply these same strategies to help your business achieve similar results.
                     </p>
