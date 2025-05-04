@@ -1,15 +1,15 @@
-import * as dotenv from "dotenv";
+import * as dotenv from 'dotenv';
 dotenv.config();
 
-import express, { type Request, Response, NextFunction } from "express";
-import { registerRoutes } from "./routes";
+import express, { type Request, type Response, type NextFunction } from 'express';
+import { registerRoutes } from './routes';
 
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-// Request logging middleware (unchanged from your original)
-app.use((req, res, next) => {
+// Request logging middleware
+app.use((req: Request, res: Response, next: NextFunction) => {
   const start = Date.now();
   const path = req.path;
   let capturedJsonResponse: Record<string, any> | undefined = undefined;
@@ -20,14 +20,14 @@ app.use((req, res, next) => {
     return originalResJson.apply(res, [bodyJson, ...args]);
   };
 
-  res.on("finish", () => {
+  res.on('finish', () => {
     const duration = Date.now() - start;
-    if (path.startsWith("/api")) {
+    if (path.startsWith('/api')) {
       let logLine = `${req.method} ${path} ${res.statusCode} in ${duration}ms`;
       if (capturedJsonResponse) {
         logLine += ` :: ${JSON.stringify(capturedJsonResponse)}`;
       }
-      console.log(logLine.length > 80 ? logLine.slice(0, 79) + "…" : logLine);
+      console.log(logLine.length > 80 ? logLine.slice(0, 79) + '…' : logLine);
     }
   });
   next();
@@ -36,28 +36,18 @@ app.use((req, res, next) => {
 (async () => {
   const server = await registerRoutes(app);
 
-  // Error handling (unchanged from your original)
+  // Error handling
   app.use((err: any, _req: Request, res: Response, _next: NextFunction) => {
     const status = err.status || err.statusCode || 500;
-    const message = err.message || "Internal Server Error";
+    const message = err.message || 'Internal Server Error';
     res.status(status).json({ message });
     throw err;
   });
 
+  const port = process.env.PORT ? parseInt(process.env.PORT) : 5000;
 
-  // PORT RESOLUTION FIX ==========================================
-  // 1. Check for direct argument (9003 in your case)
-  // 2. Fall back to .env PORT
-  // 3. Default to 5000
-  const portArgIndex = process.argv.findIndex(arg => arg === '--port');
-  const port = portArgIndex !== -1 
-    ? parseInt(process.argv[portArgIndex + 1])
-    : process.env.PORT 
-      ? parseInt(process.env.PORT)
-      : 5000;
-
-  server.listen(port, "0.0.0.0", () => {
+  server.listen(port, '0.0.0.0', () => {
     console.log(`Server running on http://0.0.0.0:${port}`);
-    console.log(`Mode: ${app.get("env")}`);
+    console.log(`Mode: ${app.get('env')}`);
   });
 })();

@@ -1,97 +1,71 @@
-import { db } from "@db";
-import { 
-  contactMessages, 
-  projects, 
-  projectTechnologies, 
-  testimonials,
-  type InsertContactMessage,
-  type InsertProject,
-  type InsertTestimonial
-} from "@shared/schema";
-import { eq, and, desc, sql } from "drizzle-orm";
+import fs from 'fs/promises';
+import path from 'path';
+import { type ContactFormData, type Project, type Testimonial } from '../../../shared/schema';
+
+const dataDir = path.join(__dirname, 'data');
+const contactFilePath = path.join(dataDir, 'contacts.json');
+const projectsFilePath = path.join(dataDir, 'projects.json');
+const testimonialsFilePath = path.join(dataDir, 'testimonials.json');
+
+async function ensureDataDir() {
+  try {
+    await fs.access(dataDir);
+  } catch {
+    await fs.mkdir(dataDir, { recursive: true });
+  }
+}
+
+async function readData<T>(filePath: string): Promise<T[]> {
+  try {
+    await ensureDataDir()
+    const data = await fs.readFile(filePath, 'utf8');
+    return JSON.parse(data) as T[];
+  } catch (error) {
+    console.error(`Error reading data from ${filePath}:`, error);
+    return [];
+  }
+}
+
+async function writeData<T>(filePath: string, data: T[]): Promise<void> {
+    await ensureDataDir()
+  try {
+    await fs.writeFile(filePath, JSON.stringify(data, null, 2), 'utf8');
+  } catch (error) {
+    console.error(`Error writing data to ${filePath}:`, error);
+  }
+}
 
 export const storage = {
-  // Contact messages
-  async insertContactMessage(message: InsertContactMessage) {
-    return await db.insert(contactMessages).values(message).returning();
+  async insertContactMessage(message: ContactFormData): Promise<ContactFormData[]> {
+    const contacts = await readData<ContactFormData>(contactFilePath);
+    contacts.push(message);
+    await writeData(contactFilePath, contacts);
+    return [message];
+  },
+
+  async getProjects(category?: string): Promise<Project[]> {
+    const projects = await readData<Project>(projectsFilePath);
+    if (category) {
+      return projects.filter(project => project.category === category);
+    }
+    return projects;
+  },
+
+  async insertProject(project: Project): Promise<Project[]> {
+    const projects = await readData<Project>(projectsFilePath);
+    projects.push(project);
+    await writeData(projectsFilePath, projects);
+    return [project];
   },
   
-  async getContactMessages() {
-    return await db.query.contactMessages.findMany({
-      orderBy: [desc(contactMessages.createdAt)]
-    });
+  async getTestimonials(): Promise<Testimonial[]> {
+    return await readData<Testimonial>(testimonialsFilePath);
   },
   
-  async markContactMessageAsRead(id: number) {
-    return await db
-      .update(contactMessages)
-      .set({ isRead: true })
-      .where(eq(contactMessages.id, id))
-      .returning();
+  async insertTestimonial(testimonial: Testimonial): Promise<Testimonial[]> {
+    const testimonials = await readData<Testimonial>(testimonialsFilePath);
+    testimonials.push(testimonial);
+    await writeData(testimonialsFilePath, testimonials);
+    return [testimonial];
   },
-  
-  // Projects
-  async getProjects(category?: string) {
-    const projectsData = await db.query.projects.findMany({
-      orderBy: [desc(projects.createdAt)],
-      where: category && category !== 'all' 
-        ? eq(projects.category, category) 
-        : undefined,
-      with: {
-        technologies: true
-      }
-    });
-    
-    // Transform the data to include technologies as an array of strings
-    return projectsData.map(project => ({
-      ...project,
-      technologies: project.technologies.map(tech => tech.technology)
-    }));
-  },
-  
-  async getProjectById(id: number) {
-    const project = await db.query.projects.findFirst({
-      where: eq(projects.id, id),
-      with: {
-        technologies: true
-      }
-    });
-    
-    if (!project) return null;
-    
-    return {
-      ...project,
-      technologies: project.technologies.map(tech => tech.technology)
-    };
-  },
-  
-  async insertProject(projectData: InsertProject, technologies: string[]) {
-    // Start a transaction to ensure both the project and its technologies are inserted
-    return await db.transaction(async (tx) => {
-      const [newProject] = await tx.insert(projects).values(projectData).returning();
-      
-      if (technologies.length > 0) {
-        await tx.insert(projectTechnologies).values(
-          technologies.map(tech => ({
-            projectId: newProject.id,
-            technology: tech
-          }))
-        );
-      }
-      
-      return newProject;
-    });
-  },
-  
-  // Testimonials
-  async getTestimonials() {
-    return await db.query.testimonials.findMany({
-      where: eq(testimonials.isVisible, true),
-      orderBy: [desc(testimonials.createdAt)]
-    });
-  },
-  
-  async insertTestimonial(testimonialData: InsertTestimonial) {
-    return await db.insert(testimonials).values(testimonialData).returning();
-  }
 };
