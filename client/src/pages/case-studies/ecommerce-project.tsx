@@ -201,7 +201,7 @@ export default function EcommerceProjectCaseStudy() {
                       <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-4">
                         <ShoppingCart className="h-6 w-6" />
                       </div>
-                      <h3 className="text-xl font-bold mt-8 mb-2 text-gray-900 dark:text-gray-100">High Cart Abandonment</h3>
+                      <h3 className="font-bold mb-2 text-gray-900 dark:text-gray-100">High Cart Abandonment</h3>
 
                       <p className="text-sm text-muted-foreground">
                         A staggering 82% cart abandonment rate compared to the industry average of 70%, with most customers dropping off during the checkout process.
