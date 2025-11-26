@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
+import { Switch } from "@/components/ui/switch";
 import { Moon, Sun } from "lucide-react";
 import { useTheme } from "@/components/theme-provider";
 import { useMobile } from "@/hooks/use-mobile";
@@ -9,6 +10,7 @@ import { cn, getInitials } from "@/lib/utils";
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(false);
   const { theme, setTheme } = useTheme();
   const isMobile = useMobile();
   const [location] = useLocation();
@@ -31,27 +33,47 @@ export default function Header() {
     setIsMenuOpen(false);
   };
 
-  const toggleTheme = () => {
-    setTheme(theme === "dark" ? "light" : "dark");
+  // Determine if switch should be checked (dark mode)
+  useEffect(() => {
+    const updateDarkMode = () => {
+      if (theme === "dark") {
+        setIsDarkMode(true);
+      } else if (theme === "light") {
+        setIsDarkMode(false);
+      } else if (theme === "system") {
+        setIsDarkMode(window.matchMedia("(prefers-color-scheme: dark)").matches);
+      }
+    };
+    
+    updateDarkMode();
+    
+    // Listen for system theme changes when theme is "system"
+    if (theme === "system") {
+      const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+      mediaQuery.addEventListener("change", updateDarkMode);
+      return () => mediaQuery.removeEventListener("change", updateDarkMode);
+    }
+  }, [theme]);
+
+  const toggleTheme = (checked: boolean) => {
+    setTheme(checked ? "dark" : "light");
   };
 
   const navItems = [
     { label: "Home", href: "/" },
-    { label: "Services", href: "/services" },
-    { label: "Work", href: "/case-studies/ecommerce-project" },
-    { label: "Blog", href: "/blog" },
+    { label: "Services", href: "/#services" },
+    { label: "Portfolio", href: "/#work" },
+    { label: "About", href: "/#about" },
     { label: "Contact", href: "/#contact" },
   ];
 
   // Removed home page section anchors to simplify navigation
 
   const isActive = (href: string) => {
-    // For routes
-    if (href.startsWith('/') && location === href) return true;
-    // For case studies
-    if (href.startsWith('/case-studies') && location.startsWith('/case-studies')) return true;
-    // For home
+    // For home route
     if (location === "/" && href === "/") return true;
+    // For hash links on home page
+    if (location === "/" && href.startsWith('/#')) return true;
     
     return false;
   };
@@ -91,19 +113,16 @@ export default function Header() {
         
         <div className="flex items-center gap-4">
           {/* Dark mode toggle */}
-          <Button 
-            variant="ghost" 
-            size="icon" 
-            onClick={toggleTheme} 
-            aria-label="Toggle dark mode"
-            className="rounded-full"
-          >
-            {theme === 'dark' ? (
-              <Sun className="h-5 w-5" />
-            ) : (
-              <Moon className="h-5 w-5" />
-            )}
-          </Button>
+          <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-muted/50 border border-border">
+            <Sun className="h-4 w-4 text-yellow-500" />
+            <Switch
+              checked={isDarkMode}
+              onCheckedChange={toggleTheme}
+              aria-label="Toggle dark mode"
+              className="data-[state=checked]:bg-primary"
+            />
+            <Moon className="h-4 w-4 text-purple-500" />
+          </div>
           
           {/* Contact button (desktop only) */}
           <a 
@@ -119,7 +138,7 @@ export default function Header() {
             size="icon"
             onClick={toggleMenu}
             aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-            className="md:hidden rounded-md hover:bg-gray-100 dark:hover:bg-gray-800"
+            className="md:hidden rounded-md hover:bg-muted"
           >
             <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
@@ -138,38 +157,13 @@ export default function Header() {
             <a
               key={item.href}
               href={item.href}
-              className="block py-2 px-3 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 font-medium"
+              className="block py-2 px-3 rounded-md hover:bg-muted font-medium"
               onClick={closeMenu}
             >
               {item.label}
             </a>
           ))}
           
-          {/* More dropdown for mobile */}
-          <div className="pt-2 border-t border-border mt-2">
-            <p className="px-3 py-1 text-xs font-semibold text-muted-foreground uppercase">More pages</p>
-            <a
-              href="/resources"
-              className="block py-2 px-3 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 font-medium"
-              onClick={closeMenu}
-            >
-              Resources
-            </a>
-            <a
-              href="/branding"
-              className="block py-2 px-3 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 font-medium"
-              onClick={closeMenu}
-            >
-              Branding
-            </a>
-            <a
-              href="/content-calendar"
-              className="block py-2 px-3 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 font-medium"
-              onClick={closeMenu}
-            >
-              Content Calendar
-            </a>
-          </div>
         </div>
       </div>
     </header>

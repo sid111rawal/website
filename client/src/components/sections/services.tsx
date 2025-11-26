@@ -1,4 +1,4 @@
-import { Check, Code, Layout, Zap } from "lucide-react";
+import { Check, Code, Layout, Zap, TrendingUp, Megaphone, Video, Sparkles } from "lucide-react";
 import { motion } from "framer-motion";
 
 interface ServiceItemProps {
@@ -11,15 +11,31 @@ interface ServiceItemProps {
   delay: number;
 }
 
-const ServiceItem = ({ icon, title, description, features, color, hoverColor, delay }: ServiceItemProps) => {
+interface ServiceItemProps {
+  icon: React.ReactNode;
+  title: string;
+  description: string;
+  features: string[];
+  color: string;
+  hoverColor: string;
+  delay: number;
+  comingSoon?: boolean;
+}
+
+const ServiceItem = ({ icon, title, description, features, color, hoverColor, delay, comingSoon = false }: ServiceItemProps) => {
   return (
     <motion.div 
-      className="service-card group bg-card rounded-xl p-8 shadow-sm border border-border hover:shadow-md transition-all duration-300"
+      className="service-card group bg-card rounded-xl p-8 shadow-sm border border-border hover:shadow-md transition-all duration-300 relative"
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay }}
     >
+      {comingSoon && (
+        <span className="absolute top-4 right-4 px-2 py-1 text-xs font-semibold bg-primary/10 text-primary rounded-full border border-primary/20">
+          Coming Soon
+        </span>
+      )}
       <div className={`service-icon w-12 h-12 ${color} rounded-lg flex items-center justify-center mb-6 ${hoverColor} transition-transform duration-300`}>
         {icon}
       </div>
@@ -81,11 +97,54 @@ export default function Services() {
       color: "bg-accent/10 dark:bg-accent/20",
       hoverColor: "text-accent",
       delay: 0.3
+    },
+    {
+      icon: <Megaphone className="h-6 w-6" />,
+      title: "Digital Marketing",
+      description: "Strategic marketing campaigns to grow your online presence and drive qualified leads to your business.",
+      features: [
+        "Content Creation",
+        "Meta & TikTok Ads",
+        "Google SEO",
+        "Lead Generation"
+      ],
+      color: "bg-secondary/10 dark:bg-secondary/20",
+      hoverColor: "text-secondary",
+      delay: 0.4
+    },
+    {
+      icon: <Video className="h-6 w-6" />,
+      title: "Media Production",
+      description: "Professional video and photo production services to create compelling visual content for your brand.",
+      features: [
+        "Video Shooting",
+        "Video Editing",
+        "Photo Editing"
+      ],
+      color: "bg-accent/10 dark:bg-accent/20",
+      hoverColor: "text-accent",
+      delay: 0.5
+    },
+    {
+      icon: <Sparkles className="h-6 w-6" />,
+      title: "AI Tools",
+      description: "Cutting-edge AI solutions to automate and enhance your business operations with intelligent automation.",
+      features: [
+        "AI Voice Reception for Businesses",
+        "Outbound & Inbound Sales AI Agent",
+        "AI-Powered Customer Support",
+        "Automated Lead Qualification",
+        "AI Content Generation"
+      ],
+      color: "bg-primary/10 dark:bg-primary/20",
+      hoverColor: "text-primary",
+      delay: 0.6,
+      comingSoon: true
     }
   ];
 
   return (
-    <section id="services" className="py-20 bg-muted/50 dark:bg-gray-900">
+    <section id="services" className="py-20 bg-muted/50">
       <div className="container mx-auto px-4 md:px-6">
         <motion.div 
           className="max-w-3xl mx-auto text-center mb-16"
@@ -96,7 +155,7 @@ export default function Services() {
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">My Services</h2>
           <p className="text-lg text-muted-foreground">
-            Comprehensive web development solutions tailored to your specific needs and business goals.
+            Comprehensive web development and digital marketing solutions tailored to your specific needs and business goals.
           </p>
         </motion.div>
         
@@ -111,6 +170,7 @@ export default function Services() {
               color={service.color}
               hoverColor={service.hoverColor}
               delay={service.delay}
+              comingSoon={service.comingSoon}
             />
           ))}
         </div>

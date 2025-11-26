@@ -2,9 +2,9 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ExternalLink } from "lucide-react";
 
-type ProjectCategory = 'all' | 'web' | 'e-commerce' | 'mobile';
+type ProjectCategory = 'all' | 'web' | 'marketing';
 
 interface PortfolioItem {
   id: number;
@@ -13,67 +13,111 @@ interface PortfolioItem {
   imageUrl: string;
   category: ProjectCategory;
   technologies: string[];
+  url: string;
 }
 
 export default function Portfolio() {
   const [activeFilter, setActiveFilter] = useState<ProjectCategory>('all');
   
   const portfolioItems: PortfolioItem[] = [
+    // Web Development Projects
     {
       id: 1,
-      title: "Modern Business Website",
-      description: "A sleek corporate website with custom animations and interactive elements",
-      imageUrl: "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+      title: "Maximum Car Detailing",
+      description: "Premium car detailing service website with booking system and service showcase",
+      imageUrl: "/images/portfolio/maximum.png",
       category: "web",
-      technologies: ["React", "TailwindCSS"]
+      technologies: ["React", "Vite", "TailwindCSS"],
+      url: "https://car-wash-green.vercel.app/"
     },
     {
       id: 2,
-      title: "Fashion E-commerce Platform",
-      description: "A full-featured online store with product filtering and secure checkout",
-      imageUrl: "https://images.unsplash.com/photo-1607082349566-187342175e2f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-      category: "e-commerce",
-      technologies: ["Next.js", "Shopify"]
+      title: "Lawgical Station",
+      description: "Professional legal services platform with modern design and user-friendly interface",
+      imageUrl: "/images/portfolio/lawgical.png",
+      category: "web",
+      technologies: ["React", "TypeScript", "TailwindCSS"],
+      url: "https://lawgicalstation.com"
     },
     {
       id: 3,
-      title: "Fitness Tracking App",
-      description: "A mobile app that helps users track workouts and manage fitness goals",
-      imageUrl: "https://images.unsplash.com/photo-1609921212029-bb5a28e60960?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-      category: "mobile",
-      technologies: ["React Native", "Firebase"]
+      title: "Ramason",
+      description: "Elegant business website showcasing services and brand identity",
+      imageUrl: "/images/portfolio/ramason.png",
+      category: "web",
+      technologies: ["React", "Next.js", "TailwindCSS"],
+      url: "https://ramason.in"
     },
     {
       id: 4,
-      title: "SaaS Dashboard",
-      description: "A complex data visualization dashboard for a marketing platform",
-      imageUrl: "https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+      title: "Taj Petha",
+      description: "Traditional sweets business website with product showcase and ordering system",
+      imageUrl: "/images/portfolio/tajpetha.png",
       category: "web",
-      technologies: ["Vue.js", "D3.js"]
+      technologies: ["React", "Vite", "TailwindCSS"],
+      url: "https://tajpetha.in"
     },
     {
       id: 5,
-      title: "Food Delivery Platform",
-      description: "An online ordering system for a restaurant chain with real-time tracking",
-      imageUrl: "https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-      category: "e-commerce",
-      technologies: ["React", "Node.js"]
+      title: "Level Up Math Academy",
+      description: "Educational platform for math learning with course management and booking system",
+      imageUrl: "/images/portfolio/leveup.png",
+      category: "web",
+      technologies: ["React", "Next.js", "TailwindCSS"],
+      url: "https://levelupmathacademy.ca/"
     },
     {
       id: 6,
-      title: "Real Estate Browser",
-      description: "A mobile app for browsing and filtering real estate listings",
-      imageUrl: "https://images.unsplash.com/photo-1556155092-490a1ba16284?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-      category: "mobile",
-      technologies: ["Flutter", "GraphQL"]
+      title: "New Stylo Furniture",
+      description: "Modern furniture e-commerce website with product showcase and online ordering",
+      imageUrl: "/images/portfolio/newstylo.png",
+      category: "web",
+      technologies: ["React", "Vite", "TailwindCSS"],
+      url: "https://furnitore.com"
+    },
+    // Digital Marketing Projects
+    {
+      id: 7,
+      title: "Chopra Jewellers",
+      description: "Instagram marketing and content strategy for luxury jewelry brand",
+      imageUrl: "/images/portfolio/chopra_in.jpg",
+      category: "marketing",
+      technologies: ["Instagram", "Content Creation", "Social Media"],
+      url: "https://www.instagram.com/choprajewellersltd?igsh=aDduZWZjcnl0cmx5"
+    },
+    {
+      id: 8,
+      title: "Maximum Car Detailing",
+      description: "Social media marketing and Instagram growth strategy for car detailing business",
+      imageUrl: "/images/portfolio/maximum_in.jpg",
+      category: "marketing",
+      technologies: ["Instagram", "Meta Ads", "Lead Generation"],
+      url: "https://www.instagram.com/maximumcardetailingto?igsh=eGY1OXgzZGI4MXJy"
+    },
+    {
+      id: 9,
+      title: "Lawgical Station",
+      description: "Professional Instagram presence and digital marketing for legal services",
+      imageUrl: "/images/portfolio/lawgical_in.jpg",
+      category: "marketing",
+      technologies: ["Instagram", "Content Strategy", "SEO"],
+      url: "https://www.instagram.com/lawgical_station?igsh=M3dhaGZ5MjdteG4z"
+    },
+    {
+      id: 10,
+      title: "Parantha Palace",
+      description: "Restaurant Instagram marketing with food photography and engagement campaigns",
+      imageUrl: "/images/portfolio/parantha_in.jpg",
+      category: "marketing",
+      technologies: ["Instagram", "Food Photography", "Video Content"],
+      url: "https://www.instagram.com/parantha_palace?igsh=dWlvenRxd25oanl6"
     }
   ];
 
   const filters: {label: string; value: ProjectCategory}[] = [
     { label: "All", value: "all" },
-    { label: "Web Design", value: "web" },
-    { label: "E-commerce", value: "e-commerce" },
-    { label: "Mobile App", value: "mobile" }
+    { label: "Web Development", value: "web" },
+    { label: "Digital Marketing", value: "marketing" }
   ];
 
   const filteredItems = activeFilter === 'all' 
@@ -90,7 +134,7 @@ export default function Portfolio() {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">My Work</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">My Portfolio</h2>
           <p className="text-lg text-muted-foreground">
             Browse through some of my recent projects and see how I've helped clients achieve their digital goals.
           </p>
@@ -122,9 +166,12 @@ export default function Portfolio() {
           transition={{ duration: 0.5 }}
         >
           {filteredItems.map((item) => (
-            <motion.div
+            <motion.a
               key={item.id}
-              className="portfolio-item relative overflow-hidden rounded-xl group"
+              href={item.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="portfolio-item relative overflow-hidden rounded-xl group cursor-pointer block"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -136,17 +183,31 @@ export default function Portfolio() {
                 loading="lazy"
                 decoding="async"
                 className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105"
+                onError={(e) => {
+                  // Fallback to a gradient placeholder if image fails to load
+                  const target = e.target as HTMLImageElement;
+                  target.style.display = 'none';
+                  if (!target.parentElement?.querySelector('.image-placeholder')) {
+                    const placeholder = document.createElement('div');
+                    placeholder.className = 'image-placeholder w-full h-64 bg-gradient-to-br from-primary/20 via-secondary/20 to-accent/20 flex items-center justify-center';
+                    placeholder.innerHTML = `<span class="text-muted-foreground text-sm">${item.title}</span>`;
+                    target.parentElement?.appendChild(placeholder);
+                  }
+                }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
-                <h3 className="text-white text-xl font-bold mb-2">{item.title}</h3>
+                <div className="flex items-start justify-between gap-2 mb-2">
+                  <h3 className="text-white text-xl font-bold">{item.title}</h3>
+                  <ExternalLink className="h-5 w-5 text-white flex-shrink-0 mt-1" />
+                </div>
                 <p className="text-gray-200 text-sm mb-3">{item.description}</p>
-                <div className="flex gap-2">
+                <div className="flex flex-wrap gap-2">
                   {item.technologies.map((tech, index) => (
                     <span key={index} className="px-2 py-1 bg-primary/20 text-white rounded text-xs">{tech}</span>
                   ))}
                 </div>
               </div>
-            </motion.div>
+            </motion.a>
           ))}
         </motion.div>
         

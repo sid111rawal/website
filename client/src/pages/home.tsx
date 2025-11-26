@@ -5,10 +5,8 @@ import Services from "@/components/sections/services";
 import Portfolio from "@/components/sections/portfolio";
 import CTASection from "@/components/sections/cta-section";
 import About from "@/components/sections/about";
-import Testimonials from "@/components/sections/testimonials";
 import Contact from "@/components/sections/contact";
 import Footer from "@/components/sections/footer";
-import PerformanceOptimization from "@/components/sections/performance-optimization";
 import { Helmet } from "react-helmet";
 
 export default function Home() {
@@ -41,12 +39,8 @@ export default function Home() {
         <Hero />
         <Services />
         <Portfolio />
-        <CTASection variant="primary" />
         <About />
-        <Testimonials />
-        <PerformanceOptimization />
         <div id="contact">
-          <CTASection variant="tertiary" />
           <Contact />
         </div>
       </main>

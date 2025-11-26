@@ -127,7 +127,7 @@ export default function Contact() {
   ];
 
   return (
-    <section id="contact" className="py-20 bg-muted/50 dark:bg-gray-900">
+    <section id="contact" className="py-20 bg-muted/50">
       <div className="container mx-auto px-4 md:px-6 max-w-6xl">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Contact info panel */}
@@ -194,7 +194,7 @@ export default function Contact() {
                     href={link.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-gray-600 dark:text-gray-300 hover:bg-primary hover:text-white transition-colors"
+                    className="w-10 h-10 rounded-full bg-muted flex items-center justify-center text-muted-foreground hover:bg-primary hover:text-primary-foreground transition-colors"
                     aria-label={link.name}
                   >
                     {link.icon}

@@ -32,12 +32,12 @@ export default function Hero() {
           </motion.h1>
           
           <motion.p 
-            className="text-lg md:text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto"
+            className="text-lg md:text-xl text-muted-foreground mb-4 max-w-2xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
           >
-            I'm a web developer focused on building beautiful, functional, and user-friendly websites that help businesses grow and succeed in the digital landscape.
+            I specialize in websites and digital marketing, helping businesses grow and succeed in the digital landscape. Founder of <span className="font-semibold text-primary">goBusy</span>.
           </motion.p>
           
           <motion.div 
@@ -49,7 +49,7 @@ export default function Hero() {
             <Button asChild size="lg" className="px-6 py-3 bg-primary hover:bg-primary/90 text-white font-medium">
               <a href="#work">View My Work</a>
             </Button>
-            <Button asChild variant="outline" size="lg" className="px-6 py-3 border-gray-300 dark:border-gray-700 hover:border-primary dark:hover:border-primary">
+            <Button asChild variant="outline" size="lg" className="px-6 py-3">
               <a href="#contact">Contact Me</a>
             </Button>
           </motion.div>

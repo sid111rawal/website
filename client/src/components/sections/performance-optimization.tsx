@@ -81,7 +81,7 @@ export default function PerformanceOptimization() {
   ];
 
   return (
-    <section className="py-20 bg-muted/30 dark:bg-gray-900/30">
+    <section className="py-20 bg-muted/30">
       <div className="container mx-auto px-4 md:px-6">
         <div className="max-w-4xl mx-auto">
           <motion.div 

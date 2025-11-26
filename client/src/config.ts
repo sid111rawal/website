@@ -8,7 +8,7 @@
 // Personal Information
 export const PERSONAL_INFO = {
   name: "Sid Rawal",
-  title: "Web Developer & Designer",
+  title: "Web Developer, Designer & Digital Marketer",
   email: "sidrawal1200@gmail.com", // Replace with your actual email for FormSubmit
   phone: ["+91 92594-18994", "+1 (416) 857-8831"],
   location: "Toronto, Canada",
@@ -54,16 +54,10 @@ export const THEME = {
 export const NAV_LINKS = [
   { label: "Home", path: "/" },
   { label: "Services", path: "/#services" },
-  { label: "Work", path: "/#work" },
-  { label: "Blog", path: "/blog" },
+  { label: "Portfolio", path: "/#work" },
+  { label: "About", path: "/#about" },
   { label: "Contact", path: "/#contact" },
 ]
 
 // Additional Navigation Links for Footer or Mobile Menu
-export const ADDITIONAL_LINKS = [
-  { label: "Resources", path: "/resources" },
-  { label: "Branding", path: "/branding" },
-  { label: "Content Calendar", path: "/content-calendar" },
-  { label: "Performance", path: "/performance" },
-  { label: "Case Studies", path: "/case-studies/ecommerce-project" },
-]
+export const ADDITIONAL_LINKS = []

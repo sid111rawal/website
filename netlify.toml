@@ -1,20 +1,8 @@
- [build]
+[build]
   command = "npm run build"
   publish = "client/dist"
 
- [[redirects]]
-  from = "/api/*" # Match all /api/* requests
-  to = "/.netlify/functions/server" # Route to the server function
-  status = 200
-
- [[redirects]]
+[[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
-
- [[redirects]]
-  from = "/src/*"
-  to = "/src/:splat"
-  status = 200
-
-  directory = "netlify/functions"
